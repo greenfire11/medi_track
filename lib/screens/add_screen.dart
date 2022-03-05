@@ -3,7 +3,7 @@ import 'package:medi_track/components/add_textfield.dart';
 import 'package:medi_track/components/medicine_type.dart';
 import 'package:intl/intl.dart';
 
-import 'components/info_container.dart';
+import '../components/info_container.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({Key? key}) : super(key: key);

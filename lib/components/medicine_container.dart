@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medi_track/info_screen.dart';
+import 'package:medi_track/screens/info_screen.dart';
 
 class MedicineCard extends StatelessWidget {
   MedicineCard({this.image, this.name, this.time});
