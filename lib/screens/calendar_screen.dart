@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medi_track/screens/calendar_screen.dart';
-
+import 'package:medi_track/screens/homepage_screen.dart';
 import '../components/background.dart';
 import '../components/calendar_button.dart';
 import '../components/medicine_container.dart';
 import '../constats.dart';
 import 'add_screen.dart';
+import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart'
+    show CalendarCarousel, WeekdayFormat;
+import 'package:flutter_calendar_carousel/classes/event.dart';
+import 'package:flutter_calendar_carousel/classes/event_list.dart';
 
-class MyHomePage2 extends StatefulWidget {
-  const MyHomePage2({Key? key}) : super(key: key);
+class CalendarScreen extends StatefulWidget {
+  const CalendarScreen({Key? key}) : super(key: key);
 
   @override
-  _MyHomePage2State createState() => _MyHomePage2State();
+  State<CalendarScreen> createState() => _CalendarScreenState();
 }
 
-class _MyHomePage2State extends State<MyHomePage2> {
+class _CalendarScreenState extends State<CalendarScreen> {
   int _selectedIndex = 0;
+  DateTime i = DateTime.now();
   List med = ["Medicine A", "Medicine B", "Medicine C", "Medicine D"];
 
   void onItemSelected(int index) {
@@ -77,16 +81,19 @@ class _MyHomePage2State extends State<MyHomePage2> {
             ),
             child: BottomNavigationBar(
               items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.calendar_today), label: 'Calendar')
               ],
               currentIndex: _selectedIndex,
               onTap: (index) {
-                if (index == 1) {
+                if (index == 0) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CalendarScreen()),
+                    MaterialPageRoute(builder: (context) => MyHomePage2()),
                   );
                   onItemSelected(index);
                 }
@@ -112,88 +119,50 @@ class _MyHomePage2State extends State<MyHomePage2> {
               ),
               child: Padding(
                 padding: const EdgeInsets.only(
-                    top: 15, left: 15, right: 15, bottom: 15),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 4,
-                      child: Row(
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Your Medicines",
-                                style: kTitleDecoration,
-                              ),
-                              Text(
-                                "Reminder",
-                                style: kTitleDecoration,
-                              )
-                            ],
-                          ),
-                          Icon(Icons.settings)
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    top: 10, left: 15, right: 15, bottom: 5),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                  child: CalendarCarousel<Event>(
+                    onDayPressed: (DateTime date, List<Event> events) {
+                      setState(() {
+                        i = date;
+                      });
+                      print(date);
+                      //take an action with date and its events
+                    },
+                    thisMonthDayBorderColor: Colors.transparent,
+                    selectedDayButtonColor: Color(0xFF30A9B2),
+                    selectedDayBorderColor: Color(0xFF30A9B2),
+                    selectedDayTextStyle: TextStyle(color: Colors.black),
+                    weekendTextStyle: TextStyle(color: Colors.black),
+                    daysTextStyle: TextStyle(color: Colors.black),
+                    nextDaysTextStyle: TextStyle(color: Colors.grey),
+                    prevDaysTextStyle: TextStyle(color: Colors.grey),
+                    weekdayTextStyle: TextStyle(color: Colors.grey),
+                    weekDayFormat: WeekdayFormat.short,
+                    firstDayOfWeek: 0,
+                    showHeader: true,
+                    isScrollable: true,
+                    weekFormat: false,
+                    height: 350.0,
+                    selectedDateTime: i,
+                    daysHaveCircularBorder: true,
+                    customGridViewPhysics: NeverScrollableScrollPhysics(),
+                    markedDatesMap: _getCarouselMarkedDates(),
+                    markedDateWidget: Container(
+                      height: 3,
+                      width: 3,
+                      decoration: new BoxDecoration(
+                        color: Color(0xFF30A9B2),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: Text(
-                        "October",
-                        style: kMonthText,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalendarButton(
-                            weekday: "Mon",
-                            date: "7",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: "Tue",
-                            date: "8",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: "Wed",
-                            date: "9",
-                            color: Colors.blue,
-                          ),
-                          CalendarButton(
-                            weekday: "Thu",
-                            date: "10",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: "Fri",
-                            date: "11",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: "Sat",
-                            date: "12",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: "Sun",
-                            date: "13",
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
-            preferredSize: Size.fromHeight(height3 / 5 * 1.7)),
+            preferredSize: Size.fromHeight(335)),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -239,6 +208,43 @@ class _MyHomePage2State extends State<MyHomePage2> {
           ],
         ),
       ),
+    );
+  }
+
+  EventList<Event> _getCarouselMarkedDates() {
+    return EventList<Event>(
+      events: {
+        new DateTime(2022, 3, 3): [
+          new Event(
+            date: new DateTime(2019, 3, 3),
+            title: 'Event 1',
+          ),
+        ],
+        new DateTime(2022, 3, 5): [
+          new Event(
+            date: new DateTime(2019, 3, 5),
+            title: 'Event 1',
+          ),
+        ],
+        new DateTime(2022, 3, 22): [
+          new Event(
+            date: new DateTime(2019, 3, 22),
+            title: 'Event 1',
+          ),
+        ],
+        new DateTime(2022, 3, 24): [
+          new Event(
+            date: new DateTime(2022, 3, 24),
+            title: 'Event 1',
+          ),
+        ],
+        new DateTime(2022, 3, 26): [
+          new Event(
+            date: new DateTime(2022, 3, 26),
+            title: 'Event 1',
+          ),
+        ],
+      },
     );
   }
 }
