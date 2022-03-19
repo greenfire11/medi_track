@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
@@ -88,12 +90,17 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 BottomNavigationBarItem(
                     icon: Icon(Icons.calendar_today), label: 'Calendar')
               ],
-              currentIndex: _selectedIndex,
+              currentIndex: 1,
               onTap: (index) {
                 if (index == 0) {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => MyHomePage2()),
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          MyHomePage2(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
                   );
                   onItemSelected(index);
                 }
@@ -118,51 +125,45 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 10, left: 15, right: 15, bottom: 5),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                  child: CalendarCarousel<Event>(
-                    onDayPressed: (DateTime date, List<Event> events) {
-                      setState(() {
-                        i = date;
-                      });
-                      print(date);
-                      //take an action with date and its events
-                    },
-                    thisMonthDayBorderColor: Colors.transparent,
-                    selectedDayButtonColor: Color(0xFF30A9B2),
-                    selectedDayBorderColor: Color(0xFF30A9B2),
-                    selectedDayTextStyle: TextStyle(color: Colors.black),
-                    weekendTextStyle: TextStyle(color: Colors.black),
-                    daysTextStyle: TextStyle(color: Colors.black),
-                    nextDaysTextStyle: TextStyle(color: Colors.grey),
-                    prevDaysTextStyle: TextStyle(color: Colors.grey),
-                    weekdayTextStyle: TextStyle(color: Colors.grey),
-                    weekDayFormat: WeekdayFormat.short,
-                    firstDayOfWeek: 0,
-                    showHeader: true,
-                    isScrollable: true,
-                    weekFormat: false,
-                    height: 350.0,
-                    selectedDateTime: i,
-                    daysHaveCircularBorder: true,
-                    customGridViewPhysics: NeverScrollableScrollPhysics(),
-                    markedDatesMap: _getCarouselMarkedDates(),
-                    markedDateWidget: Container(
-                      height: 3,
-                      width: 3,
-                      decoration: new BoxDecoration(
-                        color: Color(0xFF30A9B2),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      ),
+                padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
+                child: CalendarCarousel<Event>(
+                  onDayPressed: (DateTime date, List<Event> events) {
+                    setState(() {
+                      i = date;
+                    });
+                  },
+                  thisMonthDayBorderColor: Colors.transparent,
+                  selectedDayButtonColor: Colors.blue,
+                  selectedDayBorderColor: Colors.blue,
+                  selectedDayTextStyle: TextStyle(color: Colors.black),
+                  weekendTextStyle: TextStyle(color: Colors.black),
+                  daysTextStyle: TextStyle(color: Colors.black),
+                  nextDaysTextStyle: TextStyle(color: Colors.grey),
+                  prevDaysTextStyle: TextStyle(color: Colors.grey),
+                  weekdayTextStyle: TextStyle(color: Colors.grey),
+                  weekDayFormat: WeekdayFormat.short,
+                  firstDayOfWeek: 0,
+                  showHeader: true,
+                  isScrollable: true,
+                  weekFormat: false,
+                  height: 310,
+                  selectedDateTime: i,
+                  daysHaveCircularBorder: true,
+                  customGridViewPhysics: AlwaysScrollableScrollPhysics(),
+                  markedDatesMap: _getCarouselMarkedDates(),
+                  markedDateWidget: Container(
+                    height: 3,
+                    width: 3,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     ),
                   ),
                 ),
               ),
             ),
-            preferredSize: Size.fromHeight(335)),
+            preferredSize: Size.fromHeight(height3 / 5 * 2.2)),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -181,7 +182,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     return Dismissible(
                       confirmDismiss: (direction) async {
                         if (direction == DismissDirection.endToStart) {
-                          /// edit item
                           return false;
                         } else if (direction == DismissDirection.startToEnd) {
                           setState(() {
@@ -214,33 +214,33 @@ class _CalendarScreenState extends State<CalendarScreen> {
   EventList<Event> _getCarouselMarkedDates() {
     return EventList<Event>(
       events: {
-        new DateTime(2022, 3, 3): [
-          new Event(
-            date: new DateTime(2019, 3, 3),
+        DateTime(2022, 3, 3): [
+          Event(
+            date: DateTime(2019, 3, 3),
             title: 'Event 1',
           ),
         ],
-        new DateTime(2022, 3, 5): [
-          new Event(
-            date: new DateTime(2019, 3, 5),
+        DateTime(2022, 3, 5): [
+          Event(
+            date: DateTime(2019, 3, 5),
             title: 'Event 1',
           ),
         ],
-        new DateTime(2022, 3, 22): [
-          new Event(
-            date: new DateTime(2019, 3, 22),
+        DateTime(2022, 3, 22): [
+          Event(
+            date: DateTime(2019, 3, 22),
             title: 'Event 1',
           ),
         ],
-        new DateTime(2022, 3, 24): [
-          new Event(
-            date: new DateTime(2022, 3, 24),
+        DateTime(2022, 3, 24): [
+          Event(
+            date: DateTime(2022, 3, 24),
             title: 'Event 1',
           ),
         ],
-        new DateTime(2022, 3, 26): [
-          new Event(
-            date: new DateTime(2022, 3, 26),
+        DateTime(2022, 3, 26): [
+          Event(
+            date: DateTime(2022, 3, 26),
             title: 'Event 1',
           ),
         ],

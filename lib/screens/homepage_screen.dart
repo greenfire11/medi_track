@@ -81,12 +81,17 @@ class _MyHomePage2State extends State<MyHomePage2> {
                 BottomNavigationBarItem(
                     icon: Icon(Icons.calendar_today), label: 'Calendar')
               ],
-              currentIndex: _selectedIndex,
+              currentIndex: 0,
               onTap: (index) {
                 if (index == 1) {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => CalendarScreen()),
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          CalendarScreen(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
                   );
                   onItemSelected(index);
                 }
