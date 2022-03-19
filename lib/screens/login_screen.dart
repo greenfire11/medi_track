@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_track/components/login_textfield.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 Text(
-                  "Let's sign you in.",
+                  AppLocalizations.of(context)!.signyouin,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 70,
                 ),
                 LoginTextField(
-                    height: 60.0, width: double.infinity, hint: "Email"),
+                    height: 60.0, width: double.infinity, hint: AppLocalizations.of(context)!.email),
                 SizedBox(
                   height: 30,
                 ),
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           obscureText: notvisible,
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: "Password",
+                              hintText: AppLocalizations.of(context)!.password,
                               suffixIcon: IconButton(
                                 icon: Icon(Icons.remove_red_eye),
                                 color: Colors.black,
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Forgot password?",
+                      AppLocalizations.of(context)!.forgot,
                       style: TextStyle(
                           color: Colors.grey,
                           decoration: TextDecoration.underline),
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Log in",
+                        AppLocalizations.of(context)!.login,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

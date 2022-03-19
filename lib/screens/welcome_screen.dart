@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_track/main.dart';
 import 'package:medi_track/screens/login_screen.dart';
 import 'package:medi_track/screens/signup_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'homepage_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 15,
             ),
             Text(
-              "Medicine Reminder",
+              AppLocalizations.of(context)!.welcomeTitle,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -66,7 +66,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Sign up",
+                        AppLocalizations.of(context)!.signup,
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -96,7 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Log in",
+                        AppLocalizations.of(context)!.login,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

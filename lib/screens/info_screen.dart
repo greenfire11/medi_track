@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:medi_track/components/info_container.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _InfoScreenState extends State<InfoScreen> {
         foregroundColor: Colors.black,
         elevation: 0,
         centerTitle: true,
-        title: Text("Medicine Info"),
+        title: Text(AppLocalizations.of(context)!.medInfo),
       ),
       body: SafeArea(
           child: Column(
@@ -91,11 +92,11 @@ class _InfoScreenState extends State<InfoScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             InfoContainer(
-                              title: "Start",
+                              title: AppLocalizations.of(context)!.start,
                               info: "8 Oct 2021",
                             ),
                             InfoContainer(
-                              title: "End",
+                              title: AppLocalizations.of(context)!.end,
                               info: "10 Dec 2021",
                             )
                           ],
@@ -107,11 +108,11 @@ class _InfoScreenState extends State<InfoScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             InfoContainer(
-                              title: "Time",
+                              title: AppLocalizations.of(context)!.time,
                               info: "13:00",
                             ),
                             InfoContainer(
-                              title: "Frequency",
+                              title: AppLocalizations.of(context)!.freq,
                               info: "weekly",
                             )
                           ],
@@ -146,7 +147,7 @@ class _InfoScreenState extends State<InfoScreen> {
                             ),
                           ),
                           Text(
-                            "Delete",
+                            AppLocalizations.of(context)!.del,
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Spacer(),

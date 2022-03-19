@@ -4,6 +4,7 @@ import 'package:medi_track/components/medicine_type.dart';
 import 'package:intl/intl.dart';
 
 import '../components/info_container.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class _AddScreenState extends State<AddScreen> {
         foregroundColor: Colors.black,
         elevation: 0,
         centerTitle: true,
-        title: Text("Add new medication"),
+        title: Text(AppLocalizations.of(context)!.addmedTitle),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -64,7 +65,7 @@ class _AddScreenState extends State<AddScreen> {
           child: Column(
             children: [
               AddTextField(
-                title: "Medicine Name",
+                title: AppLocalizations.of(context)!.medName,
                 width: double.infinity,
                 height: 60.0,
               ),
@@ -74,7 +75,7 @@ class _AddScreenState extends State<AddScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Medicine Type"),
+                  Text(AppLocalizations.of(context)!.medType),
                   SizedBox(
                     height: 5,
                   ),
@@ -101,7 +102,7 @@ class _AddScreenState extends State<AddScreen> {
                 height: space,
               ),
               AddTextField(
-                title: "Dosage",
+                title: AppLocalizations.of(context)!.dosage,
                 width: double.infinity,
                 height: 60.0,
               ),
@@ -118,7 +119,7 @@ class _AddScreenState extends State<AddScreen> {
                           _selectDate(context,true);
                         },
                         child: InfoContainer(
-                          title: "Start",
+                          title: AppLocalizations.of(context)!.start,
                           info: "${DateFormat('dd MMM yyyy').format(startDate)}",
                         ),
                       ),
@@ -127,7 +128,7 @@ class _AddScreenState extends State<AddScreen> {
                           _selectDate(context,false);
                         },
                         child: InfoContainer(
-                          title: "End",
+                          title: AppLocalizations.of(context)!.end,
                           info: "${DateFormat('dd MMM yyyy').format(endDate)}",
                         ),
                       )
@@ -144,12 +145,12 @@ class _AddScreenState extends State<AddScreen> {
                           _selectTime(context); 
                         },
                         child: InfoContainer(
-                          title: "Time",
+                          title: AppLocalizations.of(context)!.time,
                           info: "${time.format(context)}",
                         ),
                       ),
                       InfoContainer(
-                        title: "Frequency",
+                        title: AppLocalizations.of(context)!.freq,
                         info: "weekly",
                       )
                     ],
@@ -158,7 +159,7 @@ class _AddScreenState extends State<AddScreen> {
                     height: space,
                   ),
                   AddTextField(
-                    title: "Note",
+                    title: AppLocalizations.of(context)!.note,
                     width: double.infinity,
                     height: 60.0,
                   ),
@@ -170,7 +171,7 @@ class _AddScreenState extends State<AddScreen> {
                     height: 45.0,
                     child: Center(
                       child: Text(
-                        "Add Medicine",
+                        AppLocalizations.of(context)!.addmed,
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import '../components/login_textfield.dart';
 import 'homepage_screen.dart';
 
@@ -29,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               children: [
                 Text(
-                  "Create an account",
+                  AppLocalizations.of(context)!.createAccount,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
@@ -39,7 +39,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 70,
                 ),
                 LoginTextField(
-                    height: 60.0, width: double.infinity, hint: "Email"),
+                    height: 60.0, width: double.infinity, hint: AppLocalizations.of(context)!.email),
                 SizedBox(
                   height: 30,
                 ),
@@ -65,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           obscureText: notvisible,
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: "Password",
+                              hintText: AppLocalizations.of(context)!.password,
                               suffixIcon: IconButton(
                                 icon: Icon(Icons.remove_red_eye),
                                 color: Colors.black,
@@ -111,7 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           obscureText: notvisible,
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: "Password",
+                              hintText: AppLocalizations.of(context)!.password,
                               suffixIcon: IconButton(
                                 icon: Icon(Icons.remove_red_eye),
                                 color: Colors.black,
@@ -157,7 +157,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Sign up",
+                        AppLocalizations.of(context)!.signup,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

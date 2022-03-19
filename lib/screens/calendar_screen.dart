@@ -144,6 +144,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   weekDayFormat: WeekdayFormat.short,
                   firstDayOfWeek: 0,
                   showHeader: true,
+                  locale: Localizations.localeOf(context).toString(),
                   isScrollable: true,
                   weekFormat: false,
                   height: 310,

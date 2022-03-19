@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:medi_track/screens/calendar_screen.dart';
-
+import 'package:medi_track/screens/settings_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import '../components/background.dart';
 import '../components/calendar_button.dart';
 import '../components/medicine_container.dart';
 import '../constats.dart';
 import 'add_screen.dart';
+import 'package:intl/intl.dart';
 
 class MyHomePage2 extends StatefulWidget {
   const MyHomePage2({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class MyHomePage2 extends StatefulWidget {
 class _MyHomePage2State extends State<MyHomePage2> {
   int _selectedIndex = 0;
   List med = ["Medicine A", "Medicine B", "Medicine C", "Medicine D"];
+  DateTime now=DateTime.now();
 
   void onItemSelected(int index) {
     setState(() {
@@ -77,9 +80,9 @@ class _MyHomePage2State extends State<MyHomePage2> {
             ),
             child: BottomNavigationBar(
               items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context)!.btmlabelone),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.calendar_today), label: 'Calendar')
+                    icon: Icon(Icons.calendar_today), label: AppLocalizations.of(context)!.btmlabeltwo)
               ],
               currentIndex: 0,
               onTap: (index) {
@@ -130,16 +133,25 @@ class _MyHomePage2State extends State<MyHomePage2> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Your Medicines",
+                                AppLocalizations.of(context)!.homeTitlestart,
                                 style: kTitleDecoration,
                               ),
                               Text(
-                                "Reminder",
+                                AppLocalizations.of(context)!.homeTitleend,
                                 style: kTitleDecoration,
                               )
                             ],
                           ),
-                          Icon(Icons.settings)
+                          GestureDetector(
+                            child: Icon(Icons.settings),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SettingsScreen()),
+                              );
+                            },
+                          ),
                         ],
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       ),
@@ -147,7 +159,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                     Expanded(
                       flex: 1,
                       child: Text(
-                        "October",
+                        DateFormat.MMMM(Localizations.localeOf(context).toString()).format(DateTime.now()),
                         style: kMonthText,
                       ),
                     ),
@@ -157,37 +169,37 @@ class _MyHomePage2State extends State<MyHomePage2> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CalendarButton(
-                            weekday: "Mon",
+                            weekday: AppLocalizations.of(context)!.mon,
                             date: "7",
                             color: Colors.grey,
                           ),
                           CalendarButton(
-                            weekday: "Tue",
+                            weekday: AppLocalizations.of(context)!.tue,
                             date: "8",
                             color: Colors.grey,
                           ),
                           CalendarButton(
-                            weekday: "Wed",
+                            weekday: AppLocalizations.of(context)!.wed,
                             date: "9",
                             color: Colors.blue,
                           ),
                           CalendarButton(
-                            weekday: "Thu",
+                            weekday: AppLocalizations.of(context)!.thu,
                             date: "10",
                             color: Colors.grey,
                           ),
                           CalendarButton(
-                            weekday: "Fri",
+                            weekday: AppLocalizations.of(context)!.fri,
                             date: "11",
                             color: Colors.grey,
                           ),
                           CalendarButton(
-                            weekday: "Sat",
+                            weekday: AppLocalizations.of(context)!.sat,
                             date: "12",
                             color: Colors.grey,
                           ),
                           CalendarButton(
-                            weekday: "Sun",
+                            weekday: AppLocalizations.of(context)!.sun,
                             date: "13",
                             color: Colors.grey,
                           ),
