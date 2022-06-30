@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AddTextField extends StatelessWidget {
-  AddTextField({this.title,this.width,this.height});
+  AddTextField({this.title,this.width,this.height,this.controller});
   final title;
   final width;
   final height;
+  final controller;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class AddTextField extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
               child: TextField(
+                  controller: controller,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                   ),

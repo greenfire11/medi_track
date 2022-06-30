@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medi_track/screens/welcome_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -197,6 +199,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 70,
+              ),
+              TextButton(onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                      );
+
+              }, child: Text("Log out"))
             ],
           ),
         ),

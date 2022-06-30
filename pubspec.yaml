@@ -39,6 +39,9 @@ dependencies:
   intl: ^0.17.0
   flutter_calendar_carousel: ^2.1.0
   localization: ^2.1.0
+  firebase_core: ^1.18.0
+  firebase_auth: ^3.3.20
+  cloud_firestore: ^3.1.18
 
 dev_dependencies:
   flutter_test:

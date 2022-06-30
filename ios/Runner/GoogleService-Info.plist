@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>611481013011-p8ujl7chm94iedjus776hahuvm4hco21.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.611481013011-p8ujl7chm94iedjus776hahuvm4hco21</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC3Fb4ZkQd5HWfP2DdROlKZYwJ8hnfSgpE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>611481013011</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jafar.mediTrack</string>
+	<key>PROJECT_ID</key>
+	<string>meditrack-93726</string>
+	<key>STORAGE_BUCKET</key>
+	<string>meditrack-93726.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:611481013011:ios:e9a24e31f6bc162adf28e6</string>
+</dict>
+</plist>

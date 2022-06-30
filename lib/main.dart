@@ -6,13 +6,23 @@ import 'package:medi_track/screens/add_screen.dart';
 import 'package:medi_track/components/background.dart';
 import 'package:medi_track/components/calendar_button.dart';
 import 'package:medi_track/components/medicine_container.dart';
+import 'package:medi_track/screens/homepage_screen.dart';
 import 'package:medi_track/screens/welcome_screen.dart';
 import 'constats.dart';
 import 'l10n/l10n.dart';  
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  print(FirebaseAuth.instance.currentUser);
   runApp(MyApp());
 }
 
@@ -23,6 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       supportedLocales: L10n.all,
+      locale: null,
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -30,7 +41,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: FirebaseAuth.instance.currentUser != null ?  MyHomePage2() : WelcomeScreen(),
     );
   }
 }

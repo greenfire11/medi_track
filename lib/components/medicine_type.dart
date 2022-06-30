@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MedicineType extends StatelessWidget {
-  MedicineType({this.image});
+  MedicineType({this.image,this.color});
   final image;
+  final color;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class MedicineType extends StatelessWidget {
         child: Image.asset("images/$image"),
       ),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: color,
         borderRadius: BorderRadius.all(Radius.circular(5)),
         boxShadow: [
           BoxShadow(
