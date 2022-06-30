@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+
 class LoginTextField extends StatelessWidget {
-  LoginTextField({this.height, this.width, this.hint});
+  LoginTextField({this.height, this.width, this.hint, this.controller});
   final height;
   final width;
   final hint;
+  final controller;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,9 @@ class LoginTextField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
           child: TextField(
+            autofillHints: [AutofillHints.email],
+            controller: controller,
+
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: "$hint",

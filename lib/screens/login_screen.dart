@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_track/components/login_textfield.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -10,6 +11,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
   bool notvisible = true;
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 70,
                 ),
                 LoginTextField(
-                    height: 60.0, width: double.infinity, hint: AppLocalizations.of(context)!.email),
+                    height: 60.0, width: double.infinity, hint: AppLocalizations.of(context)!.email, controller: emailController,),
                 SizedBox(
                   height: 30,
                 ),
@@ -61,6 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                       child: TextField(
                           obscureText: notvisible,
+                          controller: passwordController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: AppLocalizations.of(context)!.password,
@@ -100,11 +104,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 70,),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyHomePage2()),
-                    );
+                  onTap: () async {
+                    
+                    try {
+                        final credential = await FirebaseAuth.instance
+                            .signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text,
+                        );
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'weak-password') {
+                          print('The password provided is too weak.');
+                        } else if (e.code == 'email-already-in-use') {
+                          print('The account already exists for that email.');
+                        }
+                      } catch (e) {
+                      }
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomePage2()),
+                      );
                   },
                   child: Container(
                     height: 60,

@@ -48,212 +48,215 @@ class _MyHomePage2State extends State<MyHomePage2> {
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.light,
       ),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AddScreen()),
-            );
-          },
-          child: Icon(Icons.add),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20), topLeft: Radius.circular(20)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: Offset(0, 3), // changes position of shadow
-              ),
-            ],
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddScreen()),
+              );
+            },
+            child: Icon(Icons.add),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.0),
-              topRight: Radius.circular(20.0),
-            ),
-            child: BottomNavigationBar(
-              items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context)!.btmlabelone),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.calendar_today), label: AppLocalizations.of(context)!.btmlabeltwo)
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20), topLeft: Radius.circular(20)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
               ],
-              currentIndex: 0,
-              onTap: (index) {
-                if (index == 1) {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation1, animation2) =>
-                          CalendarScreen(),
-                      transitionDuration: Duration.zero,
-                      reverseTransitionDuration: Duration.zero,
-                    ),
-                  );
-                  onItemSelected(index);
-                }
-              },
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.0),
+                topRight: Radius.circular(20.0),
+              ),
+              child: BottomNavigationBar(
+                items: <BottomNavigationBarItem>[
+                  BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context)!.btmlabelone),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.calendar_today), label: AppLocalizations.of(context)!.btmlabeltwo)
+                ],
+                currentIndex: 0,
+                onTap: (index) {
+                  if (index == 1) {
+                    Navigator.pushReplacement(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation1, animation2) =>
+                            CalendarScreen(),
+                        transitionDuration: Duration.zero,
+                        reverseTransitionDuration: Duration.zero,
+                      ),
+                    );
+                    onItemSelected(index);
+                  }
+                },
+              ),
             ),
           ),
-        ),
-        appBar: PreferredSize(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 15, left: 15, right: 15, bottom: 15),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 4,
-                      child: Row(
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                AppLocalizations.of(context)!.homeTitlestart,
-                                style: kTitleDecoration,
-                              ),
-                              Text(
-                                AppLocalizations.of(context)!.homeTitleend,
-                                style: kTitleDecoration,
-                              )
-                            ],
-                          ),
-                          GestureDetector(
-                            child: Icon(Icons.settings),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SettingsScreen()),
-                              );
-                            },
-                          ),
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Text(
-                        DateFormat.MMMM(Localizations.localeOf(context).toString()).format(DateTime.now()),
-                        style: kMonthText,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.mon,
-                            date: "7",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.tue,
-                            date: "8",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.wed,
-                            date: "9",
-                            color: Colors.blue,
-                          ),
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.thu,
-                            date: "10",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.fri,
-                            date: "11",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.sat,
-                            date: "12",
-                            color: Colors.grey,
-                          ),
-                          CalendarButton(
-                            weekday: AppLocalizations.of(context)!.sun,
-                            date: "13",
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
+          appBar: PreferredSize(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
-              ),
-            ),
-            preferredSize: Size.fromHeight(height3 / 5 * 1.7)),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: Colors.transparent,
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(height: 30);
-                  },
-                  padding: EdgeInsets.fromLTRB(15, 25, 15, 45),
-                  itemCount: med.length,
-                  itemBuilder: (context, index) {
-                    return Dismissible(
-                      confirmDismiss: (direction) async {
-                        if (direction == DismissDirection.endToStart) {
-                          /// edit item
-                          return false;
-                        } else if (direction == DismissDirection.startToEnd) {
-                          setState(() {
-                            med.removeAt(index);
-                          });
-
-                          /// delete
-                          return true;
-                        }
-                      },
-                      background: slideRight(),
-                      secondaryBackground: slideLeft(),
-                      key: Key(med[index]),
-                      child: MedicineCard(
-                        image: "pills",
-                        name: "${med[index]}",
-                        time: "12:00",
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 15, left: 15, right: 15, bottom: 15),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 4,
+                        child: Row(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  AppLocalizations.of(context)!.homeTitlestart,
+                                  style: kTitleDecoration,
+                                ),
+                                Text(
+                                  AppLocalizations.of(context)!.homeTitleend,
+                                  style: kTitleDecoration,
+                                )
+                              ],
+                            ),
+                            GestureDetector(
+                              child: Icon(Icons.settings),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SettingsScreen()),
+                                );
+                              },
+                            ),
+                          ],
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        ),
                       ),
-                    );
-                  },
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          DateFormat.MMMM(Localizations.localeOf(context).toString()).format(DateTime.now()),
+                          style: kMonthText,
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.mon,
+                              date: "7",
+                              color: Colors.grey,
+                            ),
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.tue,
+                              date: "8",
+                              color: Colors.grey,
+                            ),
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.wed,
+                              date: "9",
+                              color: Colors.blue,
+                            ),
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.thu,
+                              date: "10",
+                              color: Colors.grey,
+                            ),
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.fri,
+                              date: "11",
+                              color: Colors.grey,
+                            ),
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.sat,
+                              date: "12",
+                              color: Colors.grey,
+                            ),
+                            CalendarButton(
+                              weekday: AppLocalizations.of(context)!.sun,
+                              date: "13",
+                              color: Colors.grey,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+              preferredSize: Size.fromHeight(height3 / 5 * 1.7)),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.transparent,
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(height: 30);
+                    },
+                    padding: EdgeInsets.fromLTRB(15, 25, 15, 45),
+                    itemCount: med.length,
+                    itemBuilder: (context, index) {
+                      return Dismissible(
+                        confirmDismiss: (direction) async {
+                          if (direction == DismissDirection.endToStart) {
+                            /// edit item
+                            return false;
+                          } else if (direction == DismissDirection.startToEnd) {
+                            setState(() {
+                              med.removeAt(index);
+                            });
+      
+                            /// delete
+                            return true;
+                          }
+                        },
+                        background: slideRight(),
+                        secondaryBackground: slideLeft(),
+                        key: Key(med[index]),
+                        child: MedicineCard(
+                          image: "pills",
+                          name: "${med[index]}",
+                          time: "12:00",
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
