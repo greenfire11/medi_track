@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:medi_track/screens/info_screen.dart';
 
 class MedicineCard extends StatelessWidget {
-  MedicineCard({this.image, this.name, this.time});
+  MedicineCard({this.image, this.name, this.time,this.doc});
   final image;
   final name;
   final time;
+  final doc;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class MedicineCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => InfoScreen()),
+          MaterialPageRoute(builder: (context) => InfoScreen(doc: doc)),
         );
       },
       child: Container(
@@ -41,7 +42,7 @@ class MedicineCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              child: Image.asset("images/$image.png"),
+              child: Image.asset("images/$image"),
               height: 50,
             ),
             Text(

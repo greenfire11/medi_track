@@ -15,9 +15,15 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   FirebaseFirestore db = FirebaseFirestore.instance;
+  late String dropdownvalue = AppLocalizations.of(context)!.weekly;
+  late var items = [
+    AppLocalizations.of(context)!.daily,
+    AppLocalizations.of(context)!.weekly,
+    AppLocalizations.of(context)!.monthly,
+  ];
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now();
-  String image='';
+  String image = '';
   TextEditingController nameController = TextEditingController();
   TextEditingController dosageController = TextEditingController();
   TextEditingController noteController = TextEditingController();
@@ -95,11 +101,12 @@ class _AddScreenState extends State<AddScreen> {
                             image = "pills.png";
                             print(image);
                           });
-                          
                         },
                         child: MedicineType(
                           image: "pills.png",
-                          color: image == "pills.png" ? Colors.green:Colors.white,
+                          color: image == "pills.png"
+                              ? Colors.green
+                              : Colors.white,
                         ),
                       ),
                       GestureDetector(
@@ -107,11 +114,12 @@ class _AddScreenState extends State<AddScreen> {
                           setState(() {
                             image = "syrup.png";
                           });
-                          
                         },
                         child: MedicineType(
                           image: "syrup.png",
-                          color: image == "syrup.png" ? Colors.green:Colors.white,
+                          color: image == "syrup.png"
+                              ? Colors.green
+                              : Colors.white,
                         ),
                       ),
                       GestureDetector(
@@ -119,11 +127,12 @@ class _AddScreenState extends State<AddScreen> {
                           setState(() {
                             image = "syringe.png";
                           });
-                          
                         },
                         child: MedicineType(
                           image: "syringe.png",
-                          color: image == "syringe.png" ? Colors.green:Colors.white,
+                          color: image == "syringe.png"
+                              ? Colors.green
+                              : Colors.white,
                         ),
                       ),
                       GestureDetector(
@@ -131,11 +140,12 @@ class _AddScreenState extends State<AddScreen> {
                           setState(() {
                             image = "vitaminc.png";
                           });
-                          
                         },
                         child: MedicineType(
                           image: "vitaminc.png",
-                          color: image == "vitaminc.png" ? Colors.green:Colors.white,
+                          color: image == "vitaminc.png"
+                              ? Colors.green
+                              : Colors.white,
                         ),
                       ),
                     ],
@@ -195,9 +205,50 @@ class _AddScreenState extends State<AddScreen> {
                           info: "${time.format(context)}",
                         ),
                       ),
-                      InfoContainer(
-                        title: AppLocalizations.of(context)!.freq,
-                        info: "weekly",
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(AppLocalizations.of(context)!.freq),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            height: 38,
+                            width: 100,
+                            child: Center(
+                              child: DropdownButton(
+                                value: dropdownvalue,
+                                iconSize: 0.0,
+                                underline: SizedBox(),
+                                items: items.map((String items) {
+                                  return DropdownMenuItem(
+                                    value: items,
+                                    child: Text(items),
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    dropdownvalue = newValue!;
+                                  });
+                                },
+                              ),
+                            ),
+                          )
+                        ],
                       )
                     ],
                   ),
@@ -222,7 +273,14 @@ class _AddScreenState extends State<AddScreen> {
                       while (endDate.difference(s).inDays >= 0) {
                         setState(() {
                           dateList.add(dateFormat.format(s));
-                          s = s.add(Duration(days: 7));
+                          if (dropdownvalue==AppLocalizations.of(context)!.weekly) {
+                            s = s.add(Duration(days: 7));
+                          } else if (dropdownvalue==AppLocalizations.of(context)!.daily) {
+                            s = s.add(Duration(days: 1));
+                          } else {
+                            s = DateTime(s.year,s.month+1,s.day);
+                          }
+                          
                         });
                       }
                       List boolList = [];
@@ -230,23 +288,20 @@ class _AddScreenState extends State<AddScreen> {
                         boolList.add(false);
                       }
                       final data = {
-                        'name':nameController.text,
-                        'image':image,
-                        'dosage':dosageController.text,
-                        'time':'${time.hour}:${time.minute}',
-                        'note':noteController.text,
-                        'dates':dateList,
-                        'completed':boolList
+                        'name': nameController.text,
+                        'image': image,
+                        'dosage': dosageController.text,
+                        'time': '${time.hour}:${time.minute}',
+                        'note': noteController.text,
+                        'dates': dateList,
+                        'completed': boolList,
+                        'frequency':dropdownvalue,
                       };
-                      if (data[0]==null || data[1]=='') {
-                        
-                      } else {
-                        await db.collection('YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2').doc(nameController.text).set(data);
-                        Navigator.pop(context);
-                      }
-
-                     
-                     
+                      await db
+                          .collection('YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2')
+                          .doc(nameController.text)
+                          .set(data);
+                      Navigator.pop(context);
                     },
                     child: Container(
                       width: 160.0,

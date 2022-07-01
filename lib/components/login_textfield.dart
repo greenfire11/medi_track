@@ -29,7 +29,8 @@ class LoginTextField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
           child: TextField(
-            autofillHints: [AutofillHints.email],
+            autofillHints: const [AutofillHints.email],
+            keyboardType: TextInputType.emailAddress,
             controller: controller,
 
               decoration: InputDecoration(

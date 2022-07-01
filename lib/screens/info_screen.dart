@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_track/components/info_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class InfoScreen extends StatefulWidget {
-  const InfoScreen({Key? key}) : super(key: key);
+  const InfoScreen({Key? key, required this.doc}) : super(key: key);
+  final doc;
 
   @override
   _InfoScreenState createState() => _InfoScreenState();
@@ -14,153 +17,164 @@ class InfoScreen extends StatefulWidget {
 class _InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(AppLocalizations.of(context)!.medInfo),
-      ),
-      body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.transparent,
-            ),
+    return FutureBuilder<DocumentSnapshot>(
+     future: FirebaseFirestore.instance.collection("YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2").doc(widget.doc).get(),
+      builder: (context, snapshot) {
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          final data1 = snapshot.data!.data() as Map<String, dynamic>;
+          return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            elevation: 0,
+            centerTitle: true,
+            title: Text(AppLocalizations.of(context)!.medInfo),
           ),
-          Expanded(
-            flex: 8,
-            child: Container(
-              padding: EdgeInsets.fromLTRB(35, 35, 35, 35),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
+          body: SafeArea(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Center(
-                      child: SizedBox(
-                        child: Image.asset("images/pills.png"),
-                        height: 120,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Medicine A",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 22),
-                          ),
-                          Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InfoContainer(
-                              title: AppLocalizations.of(context)!.start,
-                              info: "8 Oct 2021",
-                            ),
-                            InfoContainer(
-                              title: AppLocalizations.of(context)!.end,
-                              info: "10 Dec 2021",
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InfoContainer(
-                              title: AppLocalizations.of(context)!.time,
-                              info: "13:00",
-                            ),
-                            InfoContainer(
-                              title: AppLocalizations.of(context)!.freq,
-                              info: "weekly",
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Center(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      height: 50,
-                      width: 190,
-                      padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [ 
-                          Expanded(
-                            child: Icon(
-                              Icons.delete,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            AppLocalizations.of(context)!.del,
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Spacer(),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Container(
+                  color: Colors.transparent,
+                ),
               ),
-            ),
-          )
-        ],
-      )),
+              Expanded(
+                flex: 8,
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(35, 35, 35, 35),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Center(
+                          child: SizedBox(
+                            child: Image.asset("images/${data1['image']}"),
+                            height: 120,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                data1['name'],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 22),
+                              ),
+                              Text(
+                                data1['note'],
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InfoContainer(
+                                  title: AppLocalizations.of(context)!.start,
+                                  info: data1['dates'][0],
+                                ),
+                                InfoContainer(
+                                  title: AppLocalizations.of(context)!.end,
+                                  info: data1['dates'].last,
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InfoContainer(
+                                  title: AppLocalizations.of(context)!.time,
+                                  info: data1['time'],
+                                ),
+                                InfoContainer(
+                                  title: AppLocalizations.of(context)!.freq,
+                                  info: data1['frequency'],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          height: 50,
+                          width: 190,
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [ 
+                              Expanded(
+                                child: Icon(
+                                  Icons.delete,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                AppLocalizations.of(context)!.del,
+                                style: TextStyle(color: Colors.white, fontSize: 20),
+                              ),
+                              Spacer(),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )),
+        );
+        } return Container();
+        
+        
+      }
     );
   }
 }
