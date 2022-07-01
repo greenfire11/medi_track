@@ -28,7 +28,7 @@
     "start":"Start",
     "end":"End",
     "time":"Time",
-    "freq":"Frequncy",
+    "freq":"Frequency",
     "note":"Note",
     "addmed":"Add Medicine",
     "addmedTitle":"Add new medication",
@@ -40,6 +40,10 @@
     "priv":"Privacy",
     "appNot":"App Notifications",
     "more":"More",
-    "lang":"Language"
+    "lang":"Language",
+    "daily":"daily",
+    "monthly":"monthly",
+    "weekly":"weekly"
+
 
 }

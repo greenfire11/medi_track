@@ -37,6 +37,9 @@
     "priv":"Confidentialité",
     "appNot":"Notifications de l'app",
     "more":"Plus",
-    "lang":"Langue"
+    "lang":"Langue",
+    "daily":"quotidien",
+    "monthly":"mensuel",
+    "weekly":"hebdomadaire"
 
 }

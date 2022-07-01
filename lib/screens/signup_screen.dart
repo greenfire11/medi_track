@@ -75,6 +75,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: TextField(
                             obscureText: notvisible,
                             autofillHints: [AutofillHints.newPassword],
+                            keyboardType: TextInputType.name,
                             controller: passwordController,
                             decoration: InputDecoration(
                                 border: InputBorder.none,
