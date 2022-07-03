@@ -299,7 +299,7 @@ class _AddScreenState extends State<AddScreen> {
                       };
                       await db
                           .collection('YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2')
-                          .doc(nameController.text)
+                          .doc()
                           .set(data);
                       Navigator.pop(context);
                     },
