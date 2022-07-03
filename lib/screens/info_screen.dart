@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_track/components/info_container.dart';
@@ -15,10 +16,12 @@ class InfoScreen extends StatefulWidget {
 }
 
 class _InfoScreenState extends State<InfoScreen> {
+    final FirebaseAuth auth = FirebaseAuth.instance;
+  late String userid =auth.currentUser!.uid;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<DocumentSnapshot>(
-     future: FirebaseFirestore.instance.collection("YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2").doc(widget.doc).get(),
+     future: FirebaseFirestore.instance.collection(userid).doc(widget.doc).get(),
       builder: (context, snapshot) {
 
         if (snapshot.connectionState == ConnectionState.done) {
