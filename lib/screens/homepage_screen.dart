@@ -358,7 +358,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                   image: snapshot.data!.docs[index]['image'],
                                   name: snapshot.data!.docs[index]['name'],
                                   time: snapshot.data!.docs[index]['time'],
-                                  doc: snapshot.data!.docs[index]['name'],
+                                  doc: snapshot.data!.docs[index].reference.id,
                                 ),
                               );
                             },
