@@ -20,9 +20,11 @@ class MyHomePage2 extends StatefulWidget {
 
 class _MyHomePage2State extends State<MyHomePage2> {
   DateTime date1 = DateTime.now();
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  late String userid =auth.currentUser!.uid;
   @override
   late Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
-      .collection("YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2")
+      .collection(userid)
       .where('dates', arrayContainsAny: [
     DateFormat('dd.MM.yyyy').format(date1)
   ]).snapshots(includeMetadataChanges: true);
@@ -57,7 +59,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
       setState(() {
         date1 = date1.subtract(Duration(days: date1.weekday - wday));
         _usersStream = FirebaseFirestore.instance
-            .collection("YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2")
+            .collection(userid)
             .where('dates', arrayContainsAny: [
           DateFormat('dd.MM.yyyy')
               .format(date1.subtract(Duration(days: date1.weekday - wday)))
@@ -67,7 +69,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
       setState(() {
         date1 = date1.add(Duration(days: wday - date1.weekday));
         _usersStream = FirebaseFirestore.instance
-            .collection("YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2")
+            .collection(userid)
             .where('dates', arrayContainsAny: [
           DateFormat('dd.MM.yyyy')
               .format(date1.add(Duration(days: wday - date1.weekday)))

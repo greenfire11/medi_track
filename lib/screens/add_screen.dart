@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_track/components/add_textfield.dart';
 import 'package:medi_track/components/medicine_type.dart';
@@ -15,6 +16,8 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   FirebaseFirestore db = FirebaseFirestore.instance;
+    final FirebaseAuth auth = FirebaseAuth.instance;
+  late String userid =auth.currentUser!.uid;
   late String dropdownvalue = AppLocalizations.of(context)!.weekly;
   late var items = [
     AppLocalizations.of(context)!.daily,
@@ -298,7 +301,7 @@ class _AddScreenState extends State<AddScreen> {
                         'frequency':dropdownvalue,
                       };
                       await db
-                          .collection('YN0Y8HQaIGVyzgZ1I9IGSw2E4PB2')
+                          .collection(userid)
                           .doc()
                           .set(data);
                       Navigator.pop(context);
