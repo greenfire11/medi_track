@@ -23,6 +23,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   print(FirebaseAuth.instance.currentUser);
+  ErrorWidget.builder = (FlutterErrorDetails details) => Container();
   runApp(MyApp());
 }
 
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       home: FirebaseAuth.instance.currentUser != null ?  MyHomePage2() : WelcomeScreen(),
+      
     );
   }
 }
