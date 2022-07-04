@@ -21,7 +21,7 @@ class MyHomePage2 extends StatefulWidget {
 class _MyHomePage2State extends State<MyHomePage2> {
   DateTime date1 = DateTime.now();
   final FirebaseAuth auth = FirebaseAuth.instance;
-  late String userid =auth.currentUser!.uid;
+  late String userid = auth.currentUser!.uid;
   @override
   late Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
       .collection(userid)
@@ -29,8 +29,10 @@ class _MyHomePage2State extends State<MyHomePage2> {
     DateFormat('dd.MM.yyyy').format(date1)
   ]).snapshots(includeMetadataChanges: true);
   int _selectedIndex = 0;
+  late var formattedDate1 = DateFormat("dd.MM.yyyy").format(date1);
   List med = ["Medicine A", "Medicine B", "Medicine C", "Medicine D"];
   DateTime now = DateTime.now();
+
 
   String selectDate(int wday) {
     if (DateTime.now().weekday == wday) {
@@ -54,20 +56,24 @@ class _MyHomePage2State extends State<MyHomePage2> {
     });
   }
 
-  void changeDate(int wday) {
-    if (date1.weekday > wday) {
-      setState(() {
+  void changeDate(int wday)  async {
+    
+     if (date1.weekday > wday)   {
+       setState(() {
         date1 = date1.subtract(Duration(days: date1.weekday - wday));
+        formattedDate1 = DateFormat("dd.MM.yyyy").format(date1);
         _usersStream = FirebaseFirestore.instance
             .collection(userid)
             .where('dates', arrayContainsAny: [
           DateFormat('dd.MM.yyyy')
               .format(date1.subtract(Duration(days: date1.weekday - wday)))
         ]).snapshots(includeMetadataChanges: true);
+
       });
-    } else if (date1.weekday < wday) {
+    } else if (date1.weekday < wday)  {
       setState(() {
         date1 = date1.add(Duration(days: wday - date1.weekday));
+        formattedDate1 = DateFormat("dd.MM.yyyy").format(date1);
         _usersStream = FirebaseFirestore.instance
             .collection(userid)
             .where('dates', arrayContainsAny: [
@@ -75,10 +81,15 @@ class _MyHomePage2State extends State<MyHomePage2> {
               .format(date1.add(Duration(days: wday - date1.weekday)))
         ]).snapshots(includeMetadataChanges: true);
       });
+      
     }
+    
   }
 
   @override
+  @override
+
+
   Widget build(BuildContext context) {
     // Full screen width and height
     double width = MediaQuery.of(context).size.width;
@@ -106,6 +117,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
             }
 
             if (snapshot.hasData) {
+              
               return WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -252,7 +264,11 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                         color: date1.weekday == 1
                                             ? Colors.blue
                                             : Colors.grey,
-                                        funct: () {changeDate(1);}),
+                                        funct: ()  {
+                                            changeDate(1);
+                                           
+                                          
+                                        }),
                                     CalendarButton(
                                       weekday:
                                           AppLocalizations.of(context)!.tue,
@@ -260,7 +276,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       color: date1.weekday == 2
                                           ? Colors.blue
                                           : Colors.grey,
-                                      funct: () { changeDate(2);
+                                      funct: () {
+                                        changeDate(2);
                                       },
                                     ),
                                     CalendarButton(
@@ -270,7 +287,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       color: date1.weekday == 3
                                           ? Colors.blue
                                           : Colors.grey,
-                                      funct: () { changeDate(3);
+                                      funct: () {
+                                        changeDate(3);
                                       },
                                     ),
                                     CalendarButton(
@@ -280,7 +298,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       color: date1.weekday == 4
                                           ? Colors.blue
                                           : Colors.grey,
-                                      funct: () { changeDate(4);
+                                      funct: () {
+                                        changeDate(4);
                                       },
                                     ),
                                     CalendarButton(
@@ -290,7 +309,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       color: date1.weekday == 5
                                           ? Colors.blue
                                           : Colors.grey,
-                                      funct: () { changeDate(5);
+                                      funct: () {
+                                        changeDate(5);
                                       },
                                     ),
                                     CalendarButton(
@@ -300,7 +320,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       color: date1.weekday == 6
                                           ? Colors.blue
                                           : Colors.grey,
-                                      funct: () { changeDate(6);
+                                      funct: () {
+                                        changeDate(6);
                                       },
                                     ),
                                     CalendarButton(
@@ -310,7 +331,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       color: date1.weekday == 7
                                           ? Colors.blue
                                           : Colors.grey,
-                                      funct: () {changeDate(7);
+                                      funct: () {
+                                        changeDate(7);
                                       },
                                     ),
                                   ],
@@ -328,7 +350,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                         flex: 1,
                         child: Container(
                           color: Colors.transparent,
-                          child: ListView.separated(
+                          child: snapshot.hasData == false ? Container() :
+                          ListView.separated(
                             shrinkWrap: true,
                             separatorBuilder:
                                 (BuildContext context, int index) {
@@ -338,29 +361,56 @@ class _MyHomePage2State extends State<MyHomePage2> {
                             itemCount: snapshot.data!.docs.length,
                             itemBuilder: (context, index) {
                               return Dismissible(
+                                direction: DismissDirection.endToStart,
                                 confirmDismiss: (direction) async {
                                   if (direction ==
                                       DismissDirection.endToStart) {
-                                    /// edit item
-                                    return false;
-                                  } else if (direction ==
-                                      DismissDirection.startToEnd) {
-                                    setState(() {
-                                      med.removeAt(index);
-                                    });
-
-                                    /// delete
-                                    return true;
+                                    if (snapshot.data!.docs[index]['completed'][
+                                            snapshot.data!.docs[index]['dates']
+                                                .indexOf(DateFormat("dd.MM.yyy")
+                                                    .format(date1))] ==
+                                        true) {
+                                          List boool =
+                                          snapshot.data!.docs[index]['dates'];
+                                      var ind = boool.indexOf(
+                                          DateFormat("dd.MM.yyy")
+                                              .format(date1));
+                                      var nList = snapshot.data!.docs[index]
+                                          ['completed'];
+                                      nList[ind] = false;
+                                      await FirebaseFirestore.instance
+                                          .collection(userid)
+                                          .doc(snapshot
+                                              .data!.docs[index].reference.id)
+                                          .update({'completed': nList});
+                                    } else {
+                                      List boool =
+                                          snapshot.data!.docs[index]['dates'];
+                                      var ind = boool.indexOf(
+                                          DateFormat("dd.MM.yyy")
+                                              .format(date1));
+                                      var nList = snapshot.data!.docs[index]
+                                          ['completed'];
+                                      nList[ind] = true;
+                                      await FirebaseFirestore.instance
+                                          .collection(userid)
+                                          .doc(snapshot
+                                              .data!.docs[index].reference.id)
+                                          .update({'completed': nList});
+                                    }
                                   }
                                 },
-                                background: slideRight(),
-                                secondaryBackground: slideLeft(),
-                                key: Key(med[index]),
+                                background: snapshot.data!.docs[index]['completed'][
+                                      snapshot.data!.docs[index]['dates']
+                                          .indexOf(formattedDate1)]==true ? slideRight() : slideLeft(),
+                                key: Key(""),
                                 child: MedicineCard(
-                                  image: snapshot.data!.docs[index]['image'],
-                                  name: snapshot.data!.docs[index]['name'],
-                                  time: snapshot.data!.docs[index]['time'],
-                                  doc: snapshot.data!.docs[index].reference.id,
+                                  image: snapshot.data?.docs[index]['image'],
+                                  name: snapshot.data?.docs[index]['name'],
+                                  time: snapshot.data?.docs[index]['time'],
+                                  doc: snapshot.data?.docs[index].reference.id,
+                                  done: snapshot.data?.docs[index]['completed'][
+                                      1],
                                 ),
                               );
                             },

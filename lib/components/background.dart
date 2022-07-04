@@ -3,30 +3,30 @@
 import 'package:flutter/material.dart';
 
 Widget slideRight() {
-  return Container(
-    color: Colors.red,
+return Container(
+    color: Colors.blue,
     child: Align(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          SizedBox(
-            width: 20,
-          ),
           Icon(
-            Icons.delete,
+            Icons.undo,
             color: Colors.white,
           ),
           Text(
-            " Delete",
+            " Undo",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w700,
             ),
-            textAlign: TextAlign.right,
+            textAlign: TextAlign.left,
+          ),
+          SizedBox(
+            width: 20,
           ),
         ],
       ),
-      alignment: Alignment.centerRight,
+      alignment: Alignment.centerLeft,
     ),
   );
 }

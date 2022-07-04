@@ -123,7 +123,7 @@ void initState() {
                         currentIndex: 1,
                         onTap: (index) {
                           if (index == 0) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               PageRouteBuilder(
                                 pageBuilder: (context, animation1, animation2) =>
@@ -131,6 +131,7 @@ void initState() {
                                 transitionDuration: Duration.zero,
                                 reverseTransitionDuration: Duration.zero,
                               ),
+                              (route) => false,
                             );
                             onItemSelected(index);
                           }
@@ -218,27 +219,59 @@ void initState() {
                             itemCount: snapshot.data!.docs.length,
                             itemBuilder: (context, index) {
                               return Dismissible(
+                                 direction: DismissDirection.endToStart,
                                 confirmDismiss: (direction) async {
-                                  if (direction == DismissDirection.endToStart) {
-                                    return false;
-                                  } else if (direction ==
-                                      DismissDirection.startToEnd) {
-                                    setState(() {
-                                      med.removeAt(index);
-                                    });
-              
-                                    /// delete
-                                    return true;
+                                  if (direction ==
+                                      DismissDirection.endToStart) {
+                                    if (snapshot.data!.docs[index]['completed'][
+                                            snapshot.data!.docs[index]['dates']
+                                                .indexOf(DateFormat("dd.MM.yyy")
+                                                    .format(i))] ==
+                                        true) {
+                                          List boool =
+                                          snapshot.data!.docs[index]['dates'];
+                                      var ind = boool.indexOf(
+                                          DateFormat("dd.MM.yyy")
+                                              .format(i));
+                                      var nList = snapshot.data!.docs[index]
+                                          ['completed'];
+                                      nList[ind] = false;
+                                      await FirebaseFirestore.instance
+                                          .collection(userid)
+                                          .doc(snapshot
+                                              .data!.docs[index].reference.id)
+                                          .update({'completed': nList});
+                                    } else {
+                                      List boool =
+                                          snapshot.data!.docs[index]['dates'];
+                                      var ind = boool.indexOf(
+                                          DateFormat("dd.MM.yyy")
+                                              .format(i));
+                                      var nList = snapshot.data!.docs[index]
+                                          ['completed'];
+                                      nList[ind] = true;
+                                      await FirebaseFirestore.instance
+                                          .collection(userid)
+                                          .doc(snapshot
+                                              .data!.docs[index].reference.id)
+                                          .update({'completed': nList});
+                                    }
                                   }
                                 },
-                                background: slideRight(),
-                                secondaryBackground: slideLeft(),
-                                key: Key(med[index]),
+                                background: snapshot.data!.docs[index]['completed'][
+                                      snapshot.data!.docs[index]['dates']
+                                          .indexOf(DateFormat("dd.MM.yyy")
+                                              .format(i))]==true ? slideRight() : slideLeft(),
+                                key: Key(""),
                                 child: MedicineCard(
                                   image: snapshot.data!.docs[index]['image'],
                                   name: snapshot.data!.docs[index]['name'],
                                   time: snapshot.data!.docs[index]['time'],
                                   doc: snapshot.data!.docs[index].reference.id,
+                                  done: snapshot.data!.docs[index]['completed'][
+                                      snapshot.data!.docs[index]['dates']
+                                          .indexOf(DateFormat("dd.MM.yyy")
+                                              .format(i))],
                                 ),
                               );
                             },
