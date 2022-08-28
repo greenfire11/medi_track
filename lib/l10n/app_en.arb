@@ -43,7 +43,8 @@
     "lang":"Language",
     "daily":"daily",
     "monthly":"monthly",
-    "weekly":"weekly"
+    "weekly":"weekly",
+    "notificationText":"It's time to take your medicine"
 
 
 }

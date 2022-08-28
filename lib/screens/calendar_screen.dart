@@ -32,12 +32,12 @@ class _CalendarScreenState extends State<CalendarScreen> {
   late String userid =auth.currentUser!.uid;
   int _selectedIndex = 0;
   DateFormat format = DateFormat("dd.MM.yyyy");
-  DateTime i = DateTime.now();
+  DateTime date1 = DateTime.now();
     
   late Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
       .collection(userid)
       .where('dates', arrayContainsAny: [
-    DateFormat('dd.MM.yyyy').format(i)
+    DateFormat('dd.MM.yyyy').format(date1)
   ]).snapshots(includeMetadataChanges: true);
 
   List med = ["Medicine A", "Medicine B", "Medicine C", "Medicine D"];
@@ -160,11 +160,11 @@ void initState() {
                           child: CalendarCarousel<Event>(
                             onDayPressed: (DateTime date, List<Event> events) {
                               setState(() {
-                                i = date;
+                                date1 = date;
                                 _usersStream = FirebaseFirestore.instance
                                     .collection(userid)
                                     .where('dates', arrayContainsAny: [
-                                  DateFormat('dd.MM.yyyy').format(i)
+                                  DateFormat('dd.MM.yyyy').format(date1)
                                 ]).snapshots(includeMetadataChanges: true);
                               });
                             },
@@ -184,7 +184,7 @@ void initState() {
                             isScrollable: true,
                             weekFormat: false,
                             height: 310,
-                            selectedDateTime: i,
+                            selectedDateTime: date1,
                             daysHaveCircularBorder: true,
                             customGridViewPhysics:
                                 AlwaysScrollableScrollPhysics(),
@@ -226,13 +226,13 @@ void initState() {
                                     if (snapshot.data!.docs[index]['completed'][
                                             snapshot.data!.docs[index]['dates']
                                                 .indexOf(DateFormat("dd.MM.yyy")
-                                                    .format(i))] ==
+                                                    .format(date1))] ==
                                         true) {
                                           List boool =
                                           snapshot.data!.docs[index]['dates'];
                                       var ind = boool.indexOf(
                                           DateFormat("dd.MM.yyy")
-                                              .format(i));
+                                              .format(date1));
                                       var nList = snapshot.data!.docs[index]
                                           ['completed'];
                                       nList[ind] = false;
@@ -246,7 +246,7 @@ void initState() {
                                           snapshot.data!.docs[index]['dates'];
                                       var ind = boool.indexOf(
                                           DateFormat("dd.MM.yyy")
-                                              .format(i));
+                                              .format(date1));
                                       var nList = snapshot.data!.docs[index]
                                           ['completed'];
                                       nList[ind] = true;
@@ -261,7 +261,7 @@ void initState() {
                                 background: snapshot.data!.docs[index]['completed'][
                                       snapshot.data!.docs[index]['dates']
                                           .indexOf(DateFormat("dd.MM.yyy")
-                                              .format(i))]==true ? slideRight() : slideLeft(),
+                                              .format(date1))]==true ? slideRight() : slideLeft(),
                                 key: Key(""),
                                 child: MedicineCard(
                                   image: snapshot.data!.docs[index]['image'],
@@ -271,7 +271,7 @@ void initState() {
                                   done: snapshot.data!.docs[index]['completed'][
                                       snapshot.data!.docs[index]['dates']
                                           .indexOf(DateFormat("dd.MM.yyy")
-                                              .format(i))],
+                                              .format(date1))],
                                 ),
                               );
                             },
@@ -363,7 +363,7 @@ void initState() {
                       child: CalendarCarousel<Event>(
                         onDayPressed: (DateTime date, List<Event> events) {
                           setState(() {
-                            i = date;
+                            date1 = date;
                           });
                         },
                         thisMonthDayBorderColor: Colors.transparent,
@@ -382,7 +382,7 @@ void initState() {
                         isScrollable: true,
                         weekFormat: false,
                         height: 310,
-                        selectedDateTime: i,
+                        selectedDateTime: date1,
                         daysHaveCircularBorder: true,
                         customGridViewPhysics: AlwaysScrollableScrollPhysics(),
                         markedDatesMap: null,

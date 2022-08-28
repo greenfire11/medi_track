@@ -1,11 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:medi_track/components/add_textfield.dart';
 import 'package:medi_track/components/medicine_type.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '../api/notification_api.dart';
 import '../components/info_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:medi_track/med_data.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({Key? key}) : super(key: key);
@@ -16,8 +20,8 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   FirebaseFirestore db = FirebaseFirestore.instance;
-    final FirebaseAuth auth = FirebaseAuth.instance;
-  late String userid =auth.currentUser!.uid;
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  late String userid = auth.currentUser!.uid;
   late String dropdownvalue = AppLocalizations.of(context)!.weekly;
   late var items = [
     AppLocalizations.of(context)!.daily,
@@ -62,6 +66,22 @@ class _AddScreenState extends State<AddScreen> {
   }
 
   double space = 40;
+
+  late int idVal;
+
+  /// Check If Document Exists
+  Future<bool> checkIfDocExists(String docId) async {
+    try {
+      // Get reference to Firestore collection
+      var collectionRef = FirebaseFirestore.instance.collection(userid);
+
+      var doc = await collectionRef.doc(docId).get();
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,11 +99,54 @@ class _AddScreenState extends State<AddScreen> {
           padding: const EdgeInsets.fromLTRB(15, 30, 15, 15),
           child: Column(
             children: [
-              AddTextField(
-                controller: nameController,
-                title: AppLocalizations.of(context)!.medName,
-                width: double.infinity,
-                height: 60.0,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(AppLocalizations.of(context)!.addmedTitle),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: TypeAheadFormField<String?>(
+                        suggestionsCallback: MedData.getSuggestions,
+                        itemBuilder: (context, String? suggestion) {
+                          return ListTile(
+                            title: Text(suggestion!),
+                          );
+                        },
+                        onSuggestionSelected: (String? suggestion) {
+                          setState(() {
+                            nameController.text = suggestion!;
+                          });
+                        },
+                        textFieldConfiguration: TextFieldConfiguration(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            ),
+                            cursorColor: Colors.black,
+                            controller: nameController),
+                        suggestionsBoxDecoration: SuggestionsBoxDecoration(
+                            constraints: BoxConstraints(maxHeight: 170)),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: space,
@@ -273,37 +336,82 @@ class _AddScreenState extends State<AddScreen> {
                       DateTime s = DateTime.utc(
                           startDate.year, startDate.month, startDate.day);
                       List dateList = [];
+                      List dateListTime = [];
                       while (endDate.difference(s).inDays >= 0) {
                         setState(() {
                           dateList.add(dateFormat.format(s));
-                          if (dropdownvalue==AppLocalizations.of(context)!.weekly) {
+                          dateListTime.add(s.add(Duration(
+                              hours: time.hour, minutes: time.minute)));
+                          if (dropdownvalue ==
+                              AppLocalizations.of(context)!.weekly) {
                             s = s.add(Duration(days: 7));
-                          } else if (dropdownvalue==AppLocalizations.of(context)!.daily) {
+                          } else if (dropdownvalue ==
+                              AppLocalizations.of(context)!.daily) {
                             s = s.add(Duration(days: 1));
                           } else {
-                            s = DateTime(s.year,s.month+1,s.day);
+                            s = DateTime(s.year, s.month + 1, s.day);
                           }
-                          
                         });
                       }
+                      print(dateListTime[0].toString());
+                      if (checkIfDocExists('idValue') == true) {
+                          var document = await FirebaseFirestore.instance.collection(userid).doc('idValue').get();
+                          setState(() {
+                            idVal = document.data()?['id'];
+                          });
+
+                      } else {
+                        await FirebaseFirestore.instance
+                            .collection(userid)
+                            .doc('idValue')
+                            .set({'id': 0});
+                        setState(() {
+                          idVal=0;
+                        });
+                      }
+
                       List boolList = [];
                       for (var i = 0; i < dateList.length; i++) {
                         boolList.add(false);
+                      }
+                      List id=[];
+                      for (var i = 0; i < dateList.length; i++) {
+                        id.add(idVal+i);
                       }
                       final data = {
                         'name': nameController.text,
                         'image': image,
                         'dosage': dosageController.text,
-                        'time': '${time.hour}:${time.minute}',
+                        'time': time.minute < 10
+                            ? '${time.hour}:0${time.minute}'
+                            : '${time.hour}:${time.minute}',
                         'note': noteController.text,
                         'dates': dateList,
                         'completed': boolList,
-                        'frequency':dropdownvalue,
+                        'frequency': dropdownvalue,
+                        'id':id
                       };
-                      await db
-                          .collection(userid)
-                          .doc()
-                          .set(data);
+                      await db.collection(userid).doc().set(data);
+                      
+
+                      for (int i = 0; i < dateListTime.length; i++) {
+
+                        await NotificationApi.showScheduledNotification(
+                          id: idVal+i,
+                          title: nameController.text,
+                          body: AppLocalizations.of(context)!.notificationText,
+                          scheduledDate: DateTime.parse(
+                            dateListTime[i]
+                                .toString()
+                                .replaceAll(":00.000Z", ""),
+                          ),
+                        );
+                        await FirebaseFirestore.instance.collection(userid).doc('idValue').set({'id':idVal+1+i});
+                          
+
+                        print("done ${dateListTime[i]}");
+                      }
+
                       Navigator.pop(context);
                     },
                     child: Container(

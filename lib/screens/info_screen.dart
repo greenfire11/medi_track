@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:medi_track/components/info_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import '../api/notification_api.dart';
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({Key? key, required this.doc}) : super(key: key);
@@ -18,6 +20,7 @@ class InfoScreen extends StatefulWidget {
 class _InfoScreenState extends State<InfoScreen> {
     final FirebaseAuth auth = FirebaseAuth.instance;
   late String userid =auth.currentUser!.uid;
+  var flutterLocalNotificationsPlugin =FlutterLocalNotificationsPlugin();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<DocumentSnapshot>(
@@ -133,37 +136,48 @@ class _InfoScreenState extends State<InfoScreen> {
                         ),
                       ),
                       Center(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset: Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          height: 50,
-                          width: 190,
-                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [ 
-                              Expanded(
-                                child: Icon(
-                                  Icons.delete,
-                                  color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () async {
+                            List id = data1['id'];
+                            for (var i=0;i<id.length;i++) {
+                              await flutterLocalNotificationsPlugin.cancel(id[i]);
+                              print(id[i]);
+                            }
+                            await FirebaseFirestore.instance.collection(userid).doc(widget.doc).delete();
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
                                 ),
-                              ),
-                              Text(
-                                AppLocalizations.of(context)!.del,
-                                style: TextStyle(color: Colors.white, fontSize: 20),
-                              ),
-                              Spacer(),
-                            ],
+                              ],
+                            ),
+                            height: 50,
+                            width: 190,
+                            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [ 
+                                Expanded(
+                                  child: Icon(
+                                    Icons.delete,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  AppLocalizations.of(context)!.del,
+                                  style: TextStyle(color: Colors.white, fontSize: 20),
+                                ),
+                                Spacer(),
+                              ],
+                            ),
                           ),
                         ),
                       )
