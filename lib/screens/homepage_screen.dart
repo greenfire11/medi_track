@@ -23,6 +23,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
   final FirebaseAuth auth = FirebaseAuth.instance;
   late String userid = auth.currentUser!.uid;
   @override
+  DateTime i = DateTime.now();
   late Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
       .collection(userid)
       .where('dates', arrayContainsAny: [
@@ -91,18 +92,11 @@ class _MyHomePage2State extends State<MyHomePage2> {
 
 
   Widget build(BuildContext context) {
-    // Full screen width and height
-    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-// Height (without SafeArea)
+
     var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
 
-// Height (without status bar)
-    double height2 = height - padding.top;
-
-// Height (without status and toolbar)
     double height3 = height - padding.top - kToolbarHeight;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
@@ -350,18 +344,18 @@ class _MyHomePage2State extends State<MyHomePage2> {
                         flex: 1,
                         child: Container(
                           color: Colors.transparent,
-                          child: snapshot.hasData == false ? Container() :
+                          child: snapshot.hasData == false ? Container(
+                          ) :
                           ListView.separated(
                             shrinkWrap: true,
-                            separatorBuilder:
-                                (BuildContext context, int index) {
+                            separatorBuilder: (BuildContext context, int index) {
                               return SizedBox(height: 30);
                             },
                             padding: EdgeInsets.fromLTRB(15, 25, 15, 45),
                             itemCount: snapshot.data!.docs.length,
                             itemBuilder: (context, index) {
                               return Dismissible(
-                                direction: DismissDirection.endToStart,
+                                 direction: DismissDirection.endToStart,
                                 confirmDismiss: (direction) async {
                                   if (direction ==
                                       DismissDirection.endToStart) {
@@ -402,15 +396,18 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                 },
                                 background: snapshot.data!.docs[index]['completed'][
                                       snapshot.data!.docs[index]['dates']
-                                          .indexOf(formattedDate1)]==true ? slideRight() : slideLeft(),
+                                          .indexOf(DateFormat("dd.MM.yyy")
+                                              .format(date1))]==true ? slideRight() : slideLeft(),
                                 key: Key(""),
                                 child: MedicineCard(
-                                  image: snapshot.data?.docs[index]['image'],
-                                  name: snapshot.data?.docs[index]['name'],
-                                  time: snapshot.data?.docs[index]['time'],
-                                  doc: snapshot.data?.docs[index].reference.id,
-                                  done: snapshot.data?.docs[index]['completed'][
-                                      1],
+                                  image: snapshot.data!.docs[index]['image'],
+                                  name: snapshot.data!.docs[index]['name'],
+                                  time: snapshot.data!.docs[index]['time'],
+                                  doc: snapshot.data!.docs[index].reference.id,
+                                  done: snapshot.data!.docs[index]['completed'][
+                                      snapshot.data!.docs[index]['dates']
+                                          .indexOf(DateFormat("dd.MM.yyy")
+                                              .format(date1))],
                                 ),
                               );
                             },
@@ -559,40 +556,83 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.mon,
-                                    date: "7",
-                                    color: Colors.grey,
-                                  ),
-                                  CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.tue,
-                                    date: "8",
-                                    color: Colors.grey,
-                                  ),
-                                  CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.wed,
-                                    date: "9",
-                                    color: Colors.blue,
-                                  ),
-                                  CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.thu,
-                                    date: "10",
-                                    color: Colors.grey,
-                                  ),
-                                  CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.fri,
-                                    date: "11",
-                                    color: Colors.grey,
-                                  ),
-                                  CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.sat,
-                                    date: "12",
-                                    color: Colors.grey,
-                                  ),
-                                  CalendarButton(
-                                    weekday: AppLocalizations.of(context)!.sun,
-                                    date: "13",
-                                    color: Colors.grey,
-                                  ),
+                                        weekday:
+                                            AppLocalizations.of(context)!.mon,
+                                        date: selectDate(1),
+                                        color: date1.weekday == 1
+                                            ? Colors.blue
+                                            : Colors.grey,
+                                        funct: ()  {
+                                            changeDate(1);
+                                           
+                                          
+                                        }),
+                                    CalendarButton(
+                                      weekday:
+                                          AppLocalizations.of(context)!.tue,
+                                      date: selectDate(2),
+                                      color: date1.weekday == 2
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                      funct: () {
+                                        changeDate(2);
+                                      },
+                                    ),
+                                    CalendarButton(
+                                      weekday:
+                                          AppLocalizations.of(context)!.wed,
+                                      date: selectDate(3),
+                                      color: date1.weekday == 3
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                      funct: () {
+                                        changeDate(3);
+                                      },
+                                    ),
+                                    CalendarButton(
+                                      weekday:
+                                          AppLocalizations.of(context)!.thu,
+                                      date: selectDate(4),
+                                      color: date1.weekday == 4
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                      funct: () {
+                                        changeDate(4);
+                                      },
+                                    ),
+                                    CalendarButton(
+                                      weekday:
+                                          AppLocalizations.of(context)!.fri,
+                                      date: selectDate(5),
+                                      color: date1.weekday == 5
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                      funct: () {
+                                        changeDate(5);
+                                      },
+                                    ),
+                                    CalendarButton(
+                                      weekday:
+                                          AppLocalizations.of(context)!.sat,
+                                      date: selectDate(6),
+                                      color: date1.weekday == 6
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                      funct: () {
+                                        changeDate(6);
+                                      },
+                                    ),
+                                    CalendarButton(
+                                      weekday:
+                                          AppLocalizations.of(context)!.sun,
+                                      date: selectDate(7),
+                                      color: date1.weekday == 7
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                      funct: () {
+                                        changeDate(7);
+                                      },
+                                    ),
                                 ],
                               ),
                             ),

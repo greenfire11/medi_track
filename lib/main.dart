@@ -1,20 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:medi_track/screens/add_screen.dart';
-import 'package:medi_track/components/background.dart';
-import 'package:medi_track/components/calendar_button.dart';
-import 'package:medi_track/components/medicine_container.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
 import 'package:medi_track/screens/welcome_screen.dart';
-import 'constats.dart';
 import 'l10n/l10n.dart';  
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 
 void main() async {
@@ -24,6 +19,7 @@ void main() async {
   );
   print(FirebaseAuth.instance.currentUser);
   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
+  tz.initializeTimeZones();
   runApp(MyApp());
 }
 
