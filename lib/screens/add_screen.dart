@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:medi_track/components/add_textfield.dart';
 import 'package:medi_track/components/medicine_type.dart';
@@ -10,6 +11,9 @@ import '../components/info_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:medi_track/med_data.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:http/http.dart' as http;
+import 'package:beautiful_soup_dart/beautiful_soup.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({Key? key}) : super(key: key);
@@ -19,6 +23,7 @@ class AddScreen extends StatefulWidget {
 }
 
 class _AddScreenState extends State<AddScreen> {
+  List units = ["mg", "kg", "g", "l", "ml"];
   FirebaseFirestore db = FirebaseFirestore.instance;
   final FirebaseAuth auth = FirebaseAuth.instance;
   late String userid = auth.currentUser!.uid;
@@ -36,6 +41,69 @@ class _AddScreenState extends State<AddScreen> {
   TextEditingController noteController = TextEditingController();
 
   TimeOfDay time = TimeOfDay(hour: 0, minute: 0);
+  void getData(String tag) async {
+    final resonse = await http.post(
+        Uri.parse(
+            "https://refdatabase.refdata.ch/Viewer/SearchArticle?Lang=fr"),
+        body: {
+          "SearchTerm": tag,
+          "Sort": "ArticleDescriptionFrench"
+        },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "Referer": "https://refdatabase.refdata.ch/Viewer/Article/?Lang=FR"
+        });
+
+    BeautifulSoup bs = BeautifulSoup(resonse.body.toString());
+    var table = bs.find("table", attrs: {'id': 'GVResultb'});
+    print(table);
+    if (table==null) {
+      print("error");
+      final snackbar=SnackBar(content: Text(AppLocalizations.of(context)!.dataError));
+      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+    } else {
+      var rows = table.findAll('tr');
+    var cells = rows[0].findAll('td');
+    var text = cells[2].toString().replaceAll(RegExp('<[^>]+>'), '');
+    List<String> li = text.split(" ");
+    setState(() {
+      nameController.text = li[0];
+    });
+    print(li);
+    OUTER:
+    for (int i = 0; i < li.length; i++) {
+      for (int n = 0; n < units.length; n++) {
+        if (li[i].toLowerCase() == units[n]) {
+          setState(() {
+            dosageController.text = "${li[i - 1] + li[i]}";
+          });
+          print(li[i - 1] + li[i]);
+          break OUTER;
+        }
+      }
+    }
+
+    }
+    
+  }
+
+  Future<void> scanBarcodeNormal() async {
+    String barcodeScanRes;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+          '#ff6666', 'Cancel', true, ScanMode.BARCODE);
+    } on PlatformException {
+      barcodeScanRes = 'Failed to get platform version.';
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+    getData(barcodeScanRes);
+  }
+
   Future<void> _selectTime(BuildContext context) async {
     final TimeOfDay? picked =
         await showTimePicker(context: context, initialTime: time);
@@ -85,6 +153,12 @@ class _AddScreenState extends State<AddScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: ImageIcon(AssetImage("images/barcode.png")),
+        onPressed: () {
+          scanBarcodeNormal();
+        },
+      ),
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -337,7 +411,7 @@ class _AddScreenState extends State<AddScreen> {
                           startDate.year, startDate.month, startDate.day);
                       List dateList = [];
                       List dateListTime = [];
-                      while (endDate.difference(s).inDays >= 0) {
+                      while (endDate.difference(s).inDays >= 0) {                
                         setState(() {
                           dateList.add(dateFormat.format(s));
                           dateListTime.add(s.add(Duration(
@@ -347,6 +421,9 @@ class _AddScreenState extends State<AddScreen> {
                             s = s.add(Duration(days: 7));
                           } else if (dropdownvalue ==
                               AppLocalizations.of(context)!.daily) {
+                                if (endDate.difference(s).inDays==0) {
+                                  s.add(Duration(days: 2),);
+                                }
                             s = s.add(Duration(days: 1));
                           } else {
                             s = DateTime(s.year, s.month + 1, s.day);
@@ -355,18 +432,22 @@ class _AddScreenState extends State<AddScreen> {
                       }
                       print(dateListTime[0].toString());
                       if (checkIfDocExists('idValue') == true) {
-                          var document = await FirebaseFirestore.instance.collection(userid).doc('idValue').get();
-                          setState(() {
-                            idVal = document.data()?['id'];
-                          });
-
+                        var document = await FirebaseFirestore.instance
+                            .collection(userid)
+                            .doc('idValue')
+                            .get();
+                        setState(() {
+                          idVal = document.data()?['id'];
+                        });
                       } else {
+                        
                         await FirebaseFirestore.instance
                             .collection(userid)
                             .doc('idValue')
                             .set({'id': 0});
+                          
                         setState(() {
-                          idVal=0;
+                          idVal = 0;
                         });
                       }
 
@@ -374,9 +455,9 @@ class _AddScreenState extends State<AddScreen> {
                       for (var i = 0; i < dateList.length; i++) {
                         boolList.add(false);
                       }
-                      List id=[];
+                      List id = [];
                       for (var i = 0; i < dateList.length; i++) {
-                        id.add(idVal+i);
+                        id.add(idVal + i);
                       }
                       final data = {
                         'name': nameController.text,
@@ -389,15 +470,13 @@ class _AddScreenState extends State<AddScreen> {
                         'dates': dateList,
                         'completed': boolList,
                         'frequency': dropdownvalue,
-                        'id':id
+                        'id': id
                       };
                       await db.collection(userid).doc().set(data);
-                      
 
                       for (int i = 0; i < dateListTime.length; i++) {
-
                         await NotificationApi.showScheduledNotification(
-                          id: idVal+i,
+                          id: idVal + i,
                           title: nameController.text,
                           body: AppLocalizations.of(context)!.notificationText,
                           scheduledDate: DateTime.parse(
@@ -406,8 +485,10 @@ class _AddScreenState extends State<AddScreen> {
                                 .replaceAll(":00.000Z", ""),
                           ),
                         );
-                        await FirebaseFirestore.instance.collection(userid).doc('idValue').set({'id':idVal+1+i});
-                          
+                        await FirebaseFirestore.instance
+                            .collection(userid)
+                            .doc('idValue')
+                            .set({'id': idVal + 1 + i,'dates':[""]});
 
                         print("done ${dateListTime[i]}");
                       }

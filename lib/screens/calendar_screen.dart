@@ -51,6 +51,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
 @override
 void initState() {
     super.initState();
+    setDates();
     _getCarouselMarkedDates();
 }
   @override
@@ -188,7 +189,7 @@ void initState() {
                             daysHaveCircularBorder: true,
                             customGridViewPhysics:
                                 AlwaysScrollableScrollPhysics(),
-                            markedDatesMap: _dates1 == [] ? _getCar() : _getCarouselMarkedDates(),
+                            markedDatesMap: _getCarouselMarkedDates(),
                             markedDateWidget: Container(
                               height: 3,
                               width: 3,
@@ -425,7 +426,13 @@ void initState() {
         querySnapshot.docs.forEach((doc) {
             for (var str in doc['dates']) {
               setState(() {
-                _dates1.add(format.parse(str));
+                print(str);
+                if(str=="") {
+
+                } else {
+                  _dates1.add(format.parse(str));
+                }
+                
               });
 
                 
@@ -439,7 +446,6 @@ void initState() {
   }
 
   EventList<Event> _getCarouselMarkedDates()  {
-    setDates();
 
   var dates = _dates1.toSet().toList();
 
@@ -461,10 +467,6 @@ void initState() {
 }
 
 
-EventList<Event> _getCar() {
-  return EventList<Event> (events: {
 
-  });
-}
 
 
