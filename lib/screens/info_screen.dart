@@ -84,10 +84,12 @@ class _InfoScreenState extends State<InfoScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                data1['name'],
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 22),
+                              Center(
+                                child: Text(
+                                  data1['name'],
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 22),
+                                ),
                               ),
                               Text(
                                 data1['note'],

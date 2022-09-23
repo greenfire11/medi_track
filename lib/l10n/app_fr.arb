@@ -40,7 +40,8 @@
     "lang":"Langue",
     "daily":"quotidien",
     "monthly":"mensuel",
-    "weekly":"hebdomadaire",
-    "notificationText":"C'est l'heure de prendre votre médicament"
+    "weekly":"hebdo.",
+    "notificationText":"C'est l'heure de prendre votre médicament",
+    "dataError":"Aucune donnée disponible"
 
 }

@@ -44,7 +44,8 @@
     "daily":"daily",
     "monthly":"monthly",
     "weekly":"weekly",
-    "notificationText":"It's time to take your medicine"
+    "notificationText":"It's time to take your medicine",
+    "dataError":"Data not found"
 
 
 }
