@@ -268,6 +268,7 @@ void initState() {
                                   image: snapshot.data!.docs[index]['image'],
                                   name: snapshot.data!.docs[index]['name'],
                                   time: snapshot.data!.docs[index]['time'],
+                                  dosage: snapshot.data!.docs[index]['dosage'],
                                   doc: snapshot.data!.docs[index].reference.id,
                                   done: snapshot.data!.docs[index]['completed'][
                                       snapshot.data!.docs[index]['dates']
