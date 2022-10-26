@@ -57,34 +57,33 @@ class _AddScreenState extends State<AddScreen> {
     BeautifulSoup bs = BeautifulSoup(resonse.body.toString());
     var table = bs.find("table", attrs: {'id': 'GVResultb'});
     print(table);
-    if (table==null) {
+    if (table == null) {
       print("error");
-      final snackbar=SnackBar(content: Text(AppLocalizations.of(context)!.dataError));
+      final snackbar =
+          SnackBar(content: Text(AppLocalizations.of(context)!.dataError));
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     } else {
       var rows = table.findAll('tr');
-    var cells = rows[0].findAll('td');
-    var text = cells[2].toString().replaceAll(RegExp('<[^>]+>'), '');
-    List<String> li = text.split(" ");
-    setState(() {
-      nameController.text = li[0];
-    });
-    print(li);
-    OUTER:
-    for (int i = 0; i < li.length; i++) {
-      for (int n = 0; n < units.length; n++) {
-        if (li[i].toLowerCase() == units[n]) {
-          setState(() {
-            dosageController.text = "${li[i - 1] + li[i]}";
-          });
-          print(li[i - 1] + li[i]);
-          break OUTER;
+      var cells = rows[0].findAll('td');
+      var text = cells[2].toString().replaceAll(RegExp('<[^>]+>'), '');
+      List<String> li = text.split(" ");
+      setState(() {
+        nameController.text = li[0];
+      });
+      print(li);
+      OUTER:
+      for (int i = 0; i < li.length; i++) {
+        for (int n = 0; n < units.length; n++) {
+          if (li[i].toLowerCase() == units[n]) {
+            setState(() {
+              dosageController.text = "${li[i - 1] + li[i]}";
+            });
+            print(li[i - 1] + li[i]);
+            break OUTER;
+          }
         }
       }
     }
-
-    }
-    
   }
 
   Future<void> scanBarcodeNormal() async {
@@ -411,7 +410,7 @@ class _AddScreenState extends State<AddScreen> {
                           startDate.year, startDate.month, startDate.day);
                       List dateList = [];
                       List dateListTime = [];
-                      while (endDate.difference(s).inDays >= 0) {                
+                      while (endDate.difference(s).inDays >= 0) {
                         setState(() {
                           dateList.add(dateFormat.format(s));
                           dateListTime.add(s.add(Duration(
@@ -421,9 +420,11 @@ class _AddScreenState extends State<AddScreen> {
                             s = s.add(Duration(days: 7));
                           } else if (dropdownvalue ==
                               AppLocalizations.of(context)!.daily) {
-                                if (endDate.difference(s).inDays==0) {
-                                  s.add(Duration(days: 2),);
-                                }
+                            if (endDate.difference(s).inDays == 0) {
+                              s.add(
+                                Duration(days: 2),
+                              );
+                            }
                             s = s.add(Duration(days: 1));
                           } else {
                             s = DateTime(s.year, s.month + 1, s.day);
@@ -440,12 +441,11 @@ class _AddScreenState extends State<AddScreen> {
                           idVal = document.data()?['id'];
                         });
                       } else {
-                        
                         await FirebaseFirestore.instance
                             .collection(userid)
                             .doc('idValue')
                             .set({'id': 0});
-                          
+
                         setState(() {
                           idVal = 0;
                         });
@@ -481,14 +481,17 @@ class _AddScreenState extends State<AddScreen> {
                           body: AppLocalizations.of(context)!.notificationText,
                           scheduledDate: DateTime.parse(
                             dateListTime[i]
-                                .toString()
+                                 .toString()
                                 .replaceAll(":00.000Z", ""),
                           ),
                         );
                         await FirebaseFirestore.instance
                             .collection(userid)
                             .doc('idValue')
-                            .set({'id': idVal + 1 + i,'dates':[""]});
+                            .set({
+                          'id': idVal + 1 + i,
+                          'dates': [""]
+                        });
 
                         print("done ${dateListTime[i]}");
                       }

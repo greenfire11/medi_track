@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:medi_track/screens/info_screen.dart';
 
 class MedicineCard extends StatelessWidget {
-  MedicineCard({this.image, this.name, this.time,this.doc,this.done});
+  MedicineCard({this.image, this.name, this.time, this.doc, this.done,this.dosage});
   final image;
   final name;
   final time;
   final doc;
   final done;
+  final dosage;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class MedicineCard extends StatelessWidget {
         height: 100,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: done == true ?Colors.grey[300] : Colors.white,
+          color: done == true ? Colors.grey[300] : Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10),
               topRight: Radius.circular(10),
@@ -31,7 +32,9 @@ class MedicineCard extends StatelessWidget {
               bottomRight: Radius.circular(10)),
           boxShadow: [
             BoxShadow(
-              color: done == true ? Colors.grey.withOpacity(0.0) : Colors.grey.withOpacity(0.5),
+              color: done == true
+                  ? Colors.grey.withOpacity(0.0)
+                  : Colors.grey.withOpacity(0.5),
               spreadRadius: 5,
               blurRadius: 7,
               offset: Offset(0, 3), // changes position of shadow
@@ -50,7 +53,10 @@ class MedicineCard extends StatelessWidget {
               name,
               style: TextStyle(fontSize: 20),
             ),
-            Text(time),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text(time), Text(dosage)],
+            )
           ],
         ),
       ),
