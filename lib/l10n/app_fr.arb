@@ -44,6 +44,7 @@
     "notificationText":"C'est l'heure de prendre votre médicament",
     "dataError":"Aucune donnée disponible",
     "edit":"Modifier",
-    "changeError":"Ce paramètre ne peut pas être modifié"
+    "changeError":"Ce paramètre ne peut pas être modifié",
+    "logout":"Se déconnecter"
 
 }

@@ -9,6 +9,7 @@ import '../components/background.dart';
 import '../components/calendar_button.dart';
 import '../components/medicine_container.dart';
 import '../constats.dart';
+import '../main.dart';
 import 'add_screen.dart';
 import 'package:intl/intl.dart';
 
@@ -356,7 +357,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                             itemBuilder: (context, index) {
                               return Dismissible(
                                  direction: DismissDirection.endToStart,
-                                confirmDismiss: (direction) async {
+                                confirmDismiss: (direction)  async {
                                   if (direction ==
                                       DismissDirection.endToStart) {
                                     if (snapshot.data!.docs[index]['completed'][
@@ -372,7 +373,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       var nList = snapshot.data!.docs[index]
                                           ['completed'];
                                       nList[ind] = false;
-                                      await FirebaseFirestore.instance
+                                       FirebaseFirestore.instance
                                           .collection(userid)
                                           .doc(snapshot
                                               .data!.docs[index].reference.id)
@@ -386,7 +387,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                                       var nList = snapshot.data!.docs[index]
                                           ['completed'];
                                       nList[ind] = true;
-                                      await FirebaseFirestore.instance
+                                       FirebaseFirestore.instance
                                           .collection(userid)
                                           .doc(snapshot
                                               .data!.docs[index].reference.id)
