@@ -47,7 +47,8 @@
     "notificationText":"It's time to take your medicine",
     "dataError":"Data not found",
     "edit":"Edit",
-    "changeError":"This value can not be changed"
+    "changeError":"This value can not be changed",
+    "logout":"Log out"
 
 
 }
