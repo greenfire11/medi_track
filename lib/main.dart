@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
 import 'package:medi_track/screens/welcome_screen.dart';
 import 'package:timezone/timezone.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,6 +14,7 @@ import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:io' show Platform;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +48,14 @@ class _MyAppState extends State<MyApp> {
 
   void getLocal() async {
     final lang = await SharedPreferences.getInstance();
+    if (lang.containsKey('lang') == false) {
+      if (Platform.localeName.split('_')[0] == "fr") {
+        await lang.setString("lang", "fr");
+      } else {
+        await lang.setString("lang", "en");
+      }
+    }
+
     setLocale(Locale.fromSubtags(languageCode: '${lang.getString('lang')}'));
     setState(() {
       _dropdownvalue = "${lang.getString('lang')}";
@@ -54,7 +64,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    super.initState();
+
     getLocal();
+    print(Platform.localeName.split('_')[0]);
   }
 
   Widget build(BuildContext context) {
@@ -142,27 +155,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.priv,
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
+              GestureDetector(
+                onTap: () {
+                  launchUrl(Uri.parse("https://github.com/greenfire11/medi_track"));
+                },
+                child: Container(
+                  color: Colors.transparent,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.priv,
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
+                            size: 15,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
                   ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                    size: 15,
-                  ),
-                ],
+                ),
               ),
               SizedBox(
-                height: 50,
+                height: 30,
               ),
               Container(
                 decoration: BoxDecoration(
