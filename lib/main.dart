@@ -2,8 +2,10 @@
 
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
+import 'package:medi_track/screens/change_password_screen.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
 import 'package:medi_track/screens/welcome_screen.dart';
+import 'package:notification_permissions/notification_permissions.dart';
 import 'package:timezone/timezone.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'l10n/l10n.dart';
@@ -49,6 +51,9 @@ class _MyAppState extends State<MyApp> {
   void getLocal() async {
     final lang = await SharedPreferences.getInstance();
     if (lang.containsKey('lang') == false) {
+      Future<PermissionStatus> permissionStatus = NotificationPermissions.requestNotificationPermissions();
+
+
       if (Platform.localeName.split('_')[0] == "fr") {
         await lang.setString("lang", "fr");
       } else {
@@ -136,24 +141,45 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.pass,
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
+              
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChangePasswordScreen()),
+                    );
+                  
+                  
+                },
+                child: Container(
+                  color: Colors.transparent,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                    height: 20,
                   ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                    size: 15,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.pass,
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
+                            size: 15,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      )
+                    ],
                   ),
-                ],
+                ),
               ),
               GestureDetector(
                 onTap: () {
@@ -164,7 +190,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

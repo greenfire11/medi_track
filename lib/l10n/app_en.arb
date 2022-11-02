@@ -48,7 +48,14 @@
     "dataError":"Data not found",
     "edit":"Edit",
     "changeError":"This value can not be changed",
-    "logout":"Log out"
+    "logout":"Log out",
+    "createPass":"Create new password",
+    "newPassInfo":"Your new password must be different from previous used passwords.",
+    "oldPass": "Old password",
+    "newPass":"New password",
+    "changePass": "Change Password",
+    "welcomeMessage":"Welcom to MediTrack! This app will remind you when it’s time to take your medications based on the schedule you create."
+
 
 
 }

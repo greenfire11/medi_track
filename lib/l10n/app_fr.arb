@@ -33,7 +33,7 @@
     "del":"Supprimer",
     "setting":"Paramètres",
     "account":"Compte",
-    "pass":"Change mot de passe",
+    "pass":"Changer le mot de passe",
     "priv":"Confidentialité",
     "appNot":"Notifications de l'app",
     "more":"Plus",
@@ -45,6 +45,12 @@
     "dataError":"Aucune donnée disponible",
     "edit":"Modifier",
     "changeError":"Ce paramètre ne peut pas être modifié",
-    "logout":"Se déconnecter"
+    "logout":"Se déconnecter",
+    "createPass":"Créer un nouveau mot de passe",
+    "newPassInfo":"Votre nouveau mot de passe doit être différent des mots de passe utilisés précédemment.",
+    "oldPass": "Ancien mot de passe",
+    "newPass":"Nouveau mot de passe",
+    "changePass": "Changer le mot de passe",
+    "welcomeMessage":"Bienvenue sur MediTrack! Cette application vous rappellera quand il est temps de prendre vos médicaments en fonction du calendrier que vous créez."
 
 }
