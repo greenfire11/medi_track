@@ -10,7 +10,7 @@ Une application Open Source!
 
 
 
-## Download
+## Télécharger
 
 
 
@@ -21,12 +21,12 @@ Une application Open Source!
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-## Translations
+## Traductions
 - [English :en:](/README.md)
 
 
 
-## Features
+## Fonctionnalités
 
 - Utilisation facile
 - Lecteur de codes-barres
@@ -39,7 +39,7 @@ Une application Open Source!
 et beaucoup plus...
 Vérifiez vous-même :)
 
-## Screenshots
+## Captures d'écran
 
 <img src="https://github.com/greenfire11/medi_track/blob/media/Welcome.png?raw=true" width="32%"> <img src="https://github.com/greenfire11/medi_track/blob/media/Main.png?raw=true"  width="32%"> <img src="https://github.com/greenfire11/medi_track/blob/media/Calendar.png?raw=true"  width="32%"> <img src="https://github.com/greenfire11/medi_track/blob/media/Info.png?raw=true" width="32%"> <img src="https://github.com/greenfire11/medi_track/blob/media/Add.png?raw=true" width="32%"> <img src="https://github.com/greenfire11/medi_track/blob/media/Settings.png?raw=true" width="32%">
 
