@@ -1,0 +1,4 @@
+#Fri Nov 04 12:35:41 CET 2022
+base.0=/Users/jafar/flutter projects/medi_track/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

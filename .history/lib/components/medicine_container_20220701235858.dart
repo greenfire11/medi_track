@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'package:medi_track/screens/info_screen.dart';
+
+class MedicineCard extends StatelessWidget {
+  MedicineCard({this.image, this.name, this.time});
+  final image;
+  final name;
+  final time;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => InfoScreen(doc: "Medicine A",)),
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.only(right: 10, left: 10),
+        height: 100,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(10),
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              child: Image.asset("images/$image"),
+              height: 50,
+            ),
+            Text(
+              name,
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(time),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/jafar/medi_track/BuildConfig.java
+ com.jafar.medi_track.BuildConfig
+com/jafar/medi_track/MainActivity.java
+ com.jafar.medi_track.MainActivity

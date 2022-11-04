@@ -1,0 +1,327 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.jafar.medi_track"
+4    android:versionCode="1"
+5    android:versionName="1.1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+11-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:46:5-77
+11-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:46:22-74
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:9:5-65
+12-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:9:22-62
+13
+14    <uses-feature android:name="android.hardware.camera" />
+14-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:11:5-60
+14-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:11:19-57
+15
+16    <uses-permission android:name="android.permission.FLASHLIGHT" />
+16-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:13:5-69
+16-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:13:22-66
+17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+17-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:7:5-81
+17-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:7:22-78
+18    <uses-permission android:name="android.permission.VIBRATE" />
+18-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:8:5-66
+18-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:8:22-63
+19    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+19-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:9:5-81
+19-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:9:22-78
+20    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+20-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:10:5-79
+20-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:10:22-76
+21    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+21-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:11:5-77
+21-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:11:22-74
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:23:5-67
+22-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:23:22-64
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:24:5-79
+23-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:24:22-76
+24
+25    <application
+26        android:name="android.app.Application"
+26-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:5:9-42
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:24:18-86
+28        android:icon="@mipmap/ic_launcher"
+28-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:6:9-43
+29        android:label="MediTrack"
+29-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:4:9-34
+30        android:largeHeap="true"
+30-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:16:9-33
+31        android:theme="@style/Theme.AppCompat.NoActionBar" >
+31-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:17:9-59
+32        <activity
+32-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:7:9-29:20
+33            android:name="com.jafar.medi_track.MainActivity"
+33-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:10:13-41
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+34-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:14:13-163
+35            android:exported="true"
+35-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:11:13-36
+36            android:hardwareAccelerated="true"
+36-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:15:13-47
+37            android:launchMode="singleTop"
+37-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:12:13-43
+38            android:showWhenLocked="true"
+38-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:8:13-42
+39            android:theme="@style/LaunchTheme"
+39-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:13:13-47
+40            android:turnScreenOn="true"
+40-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:9:13-40
+41            android:windowSoftInputMode="adjustResize" >
+41-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:16:13-55
+42
+43            <!--
+44                 Specifies an Android theme to apply to this Activity as soon as
+45                 the Android process has started. This theme is visible to the user
+46                 while the Flutter UI initializes. After that, this theme continues
+47                 to determine the Window background behind the Flutter UI.
+48            -->
+49            <meta-data
+49-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:21:13-24:17
+50                android:name="io.flutter.embedding.android.NormalTheme"
+50-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:22:15-70
+51                android:resource="@style/NormalTheme" />
+51-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:23:15-52
+52
+53            <intent-filter>
+53-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:25:13-28:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:26:17-68
+54-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:26:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:27:17-76
+56-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:27:27-74
+57            </intent-filter>
+58        </activity>
+59
+60        <receiver
+60-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:30:9-34:24
+61            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+61-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:30:19-107
+62            android:exported="false" >
+62-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:19:13-37
+63            <intent-filter>
+63-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:31:13-33:29
+64                <action android:name="android.intent.action.BOOT_COMPLETED" />
+64-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:32:17-86
+64-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:32:25-76
+65            </intent-filter>
+66            <intent-filter>
+66-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:20:13-25:29
+67                <action android:name="android.intent.action.BOOT_COMPLETED" />
+67-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:32:17-86
+67-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:32:25-76
+68                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+68-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:22:17-84
+68-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:22:25-81
+69                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+69-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:23:17-82
+69-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:23:25-79
+70                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+70-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:24:17-82
+70-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:24:25-79
+71            </intent-filter>
+72        </receiver>
+73        <receiver
+73-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:35:13-110
+74            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+74-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:35:23-107
+75            android:exported="false" />
+75-->[:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:16:13-37
+76        <!--
+77             Don't delete the meta-data below.
+78             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+79        -->
+80        <meta-data
+80-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:38:9-40:33
+81            android:name="flutterEmbedding"
+81-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:39:13-44
+82            android:value="2" />
+82-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:40:13-30
+83
+84        <service
+84-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:41:9-44:43
+85            android:name="com.dexterous.flutterlocalnotifications.ForegroundService"
+85-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:42:13-85
+86            android:exported="false"
+86-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:43:13-37
+87            android:stopWithTask="false" />
+87-->/Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:44:13-41
+88        <service
+88-->[:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+89            android:name="com.google.firebase.components.ComponentDiscoveryService"
+89-->[:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:8:18-89
+90            android:directBootAware="true"
+90-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
+91            android:exported="false" >
+91-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:66:13-37
+92            <meta-data
+92-->[:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+93                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+93-->[:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:10:17-124
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+95            <meta-data
+95-->[:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+96-->[:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:10:17-134
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+98            <meta-data
+98-->[:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+99-->[:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:10:17-124
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+101            <meta-data
+101-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:67:13-69:85
+102                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+102-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:68:17-109
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:69:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:20:13-22:85
+105                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+105-->[com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:21:17-111
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:22:17-82
+107        </service>
+108
+109        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
+109-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:18:9-91
+109-->[:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:18:19-88
+110        <activity
+110-->[:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:8:9-11:74
+111            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+111-->[:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:9:13-74
+112            android:exported="false"
+112-->[:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:10:13-37
+113            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+113-->[:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:11:13-71
+114
+115        <uses-library
+115-->[androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+116            android:name="androidx.window.extensions"
+116-->[androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+117            android:required="false" />
+117-->[androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+118        <uses-library
+118-->[androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+119            android:name="androidx.window.sidecar"
+119-->[androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+120            android:required="false" />
+120-->[androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+121
+122        <activity
+122-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:27:9-44:20
+123            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+123-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:28:13-80
+124            android:excludeFromRecents="true"
+124-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:29:13-46
+125            android:exported="true"
+125-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:30:13-36
+126            android:launchMode="singleTask"
+126-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:31:13-44
+127            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+127-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:32:13-72
+128            <intent-filter>
+128-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:33:13-43:29
+129                <action android:name="android.intent.action.VIEW" />
+129-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:17-69
+129-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:25-66
+130
+131                <category android:name="android.intent.category.DEFAULT" />
+131-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:17-76
+131-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:27-73
+132                <category android:name="android.intent.category.BROWSABLE" />
+132-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:17-78
+132-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:27-75
+133
+134                <data
+134-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:39:17-42:51
+135                    android:host="firebase.auth"
+135-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:40:21-49
+136                    android:path="/"
+136-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:41:21-37
+137                    android:scheme="genericidp" />
+137-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:42:21-48
+138            </intent-filter>
+139        </activity>
+140        <activity
+140-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:45:9-62:20
+141            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+141-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:46:13-79
+142            android:excludeFromRecents="true"
+142-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:47:13-46
+143            android:exported="true"
+143-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:48:13-36
+144            android:launchMode="singleTask"
+144-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:49:13-44
+145            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+145-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:50:13-72
+146            <intent-filter>
+146-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:51:13-61:29
+147                <action android:name="android.intent.action.VIEW" />
+147-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:17-69
+147-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:25-66
+148
+149                <category android:name="android.intent.category.DEFAULT" />
+149-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:17-76
+149-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:27-73
+150                <category android:name="android.intent.category.BROWSABLE" />
+150-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:17-78
+150-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:27-75
+151
+152                <data
+152-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:39:17-42:51
+153                    android:host="firebase.auth"
+153-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:40:21-49
+154                    android:path="/"
+154-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:41:21-37
+155                    android:scheme="recaptcha" />
+155-->[com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:42:21-48
+156            </intent-filter>
+157        </activity>
+158
+159        <provider
+159-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:26:9-31:39
+160            android:name="com.google.firebase.provider.FirebaseInitProvider"
+160-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:27:13-77
+161            android:authorities="com.jafar.medi_track.firebaseinitprovider"
+161-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:28:13-72
+162            android:directBootAware="true"
+162-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:29:13-43
+163            android:exported="false"
+163-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:30:13-37
+164            android:initOrder="100" />
+164-->[com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:31:13-36
+165
+166        <activity
+166-->[com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+167            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+167-->[com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+168            android:exported="false"
+168-->[com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+169-->[com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+170
+171        <meta-data
+171-->[com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+172            android:name="com.google.android.gms.version"
+172-->[com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+173            android:value="@integer/google_play_services_version" />
+173-->[com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+174    </application>
+175
+176</manifest>

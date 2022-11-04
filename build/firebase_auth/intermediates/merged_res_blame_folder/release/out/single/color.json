@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/jafar/.gradle/caches/transforms-2/files-2.1/6a327b053cfd5cd626462d34c1aefdf2/jetified-play-services-base-17.1.0/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/jafar/.gradle/caches/transforms-2/files-2.1/6a327b053cfd5cd626462d34c1aefdf2/jetified-play-services-base-17.1.0/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/res/merged/release/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/jafar/.gradle/caches/transforms-2/files-2.1/6a327b053cfd5cd626462d34c1aefdf2/jetified-play-services-base-17.1.0/res/color/common_google_signin_btn_tint.xml"
+    }
+]

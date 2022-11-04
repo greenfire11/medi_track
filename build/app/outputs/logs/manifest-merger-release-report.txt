@@ -1,0 +1,608 @@
+-- Merging decision tree log ---
+application
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:3:4-45:19
+MERGED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:7:5-13:19
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:7:5-13:19
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:7:5-13:19
+MERGED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:15:5-19:19
+MERGED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:15:5-19:19
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:13:5-27:19
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:13:5-27:19
+MERGED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:7:5-12:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:26:5-71:19
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:26:5-71:19
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/de394d86e30a6e30062175a1deba4fb3/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/de394d86e30a6e30062175a1deba4fb3/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b1c6f63d723152997e30b9c383900a3/jetified-firebase-appcheck-interop-16.0.0/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b1c6f63d723152997e30b9c383900a3/jetified-firebase-appcheck-interop-16.0.0/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.android.material:material:1.3.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f353ad0b87e65e71be770e51d0104514/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f353ad0b87e65e71be770e51d0104514/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0e920b6f64b3e25c4aeeccc8f909ab31/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0e920b6f64b3e25c4aeeccc8f909ab31/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/536393d67f9119702331d1862db63d81/jetified-play-services-vision-20.1.3/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/536393d67f9119702331d1862db63d81/jetified-play-services-vision-20.1.3/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/165cc08740a2372196f4b358961b53be/jetified-play-services-vision-common-19.1.3/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/165cc08740a2372196f4b358961b53be/jetified-play-services-vision-common-19.1.3/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/46c33e9a0e79b5a94ed29e818c6e0e57/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/46c33e9a0e79b5a94ed29e818c6e0e57/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/6abedeb70fc2b0a7ac9dde02ba387585/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/6abedeb70fc2b0a7ac9dde02ba387585/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0659900500155a7983b62b9317cebbaa/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0659900500155a7983b62b9317cebbaa/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0fb4aa79ecbc3d536a2a436220fe36af/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0fb4aa79ecbc3d536a2a436220fe36af/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5a52bdba5be8e0efd3eb581b98d67e93/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5a52bdba5be8e0efd3eb581b98d67e93/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5d617ebbeeeeacb1d52127ec9e4653c3/jetified-threetenabp-1.2.3/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5d617ebbeeeeacb1d52127ec9e4653c3/jetified-threetenabp-1.2.3/AndroidManifest.xml:7:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:4:9-34
+	android:largeHeap
+		ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:16:9-33
+	android:icon
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:6:9-43
+	android:theme
+		ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:17:9-59
+	android:name
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:5:9-42
+manifest
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+MERGED from [:shared_preferences_android] /Users/jafar/flutter projects/medi_track/build/shared_preferences_android/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:2:1-15:12
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:2:1-15:12
+MERGED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:2:1-21:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/jafar/flutter projects/medi_track/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:notification_permissions] /Users/jafar/flutter projects/medi_track/build/notification_permissions/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:app_settings] /Users/jafar/flutter projects/medi_track/build/app_settings/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_keyboard_visibility] /Users/jafar/flutter projects/medi_track/build/flutter_keyboard_visibility/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:2:1-29:12
+MERGED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/350199e59153ae6a9bd2425baa6b511f/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:17:1-73:12
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/de394d86e30a6e30062175a1deba4fb3/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b1c6f63d723152997e30b9c383900a3/jetified-firebase-appcheck-interop-16.0.0/AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:15:1-40:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a2b9e436cc7903490f03fe42d505c4e1/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/88f830c8a8d86a3ebc0294d0edfb971e/media-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f353ad0b87e65e71be770e51d0104514/material-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0e920b6f64b3e25c4aeeccc8f909ab31/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ee2cd5cce0601cd6a9c4888018d5b6ae/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/71ff1b600b7e434ea6d9a8add370fd02/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/536393d67f9119702331d1862db63d81/jetified-play-services-vision-20.1.3/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/165cc08740a2372196f4b358961b53be/jetified-play-services-vision-common-19.1.3/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a1b8a66c32ae9a101d5653d83374dc3c/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/46c33e9a0e79b5a94ed29e818c6e0e57/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/150ac8f44cd467cf88d389f6158da1b7/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/6abedeb70fc2b0a7ac9dde02ba387585/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3c3317d4c9d8a46812159184248103a6/jetified-play-services-flags-17.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0659900500155a7983b62b9317cebbaa/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0fb4aa79ecbc3d536a2a436220fe36af/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/cdca8c87c086ed3128ffd6b999f5886b/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/c212252c7a336073c9b9e230f0222eca/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/031b57ff437d9b99ab9f92c6ad385103/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b933f66da461b62aca365f1bf9405e2/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f6eb2c0f8e5aa68d491b77c9660a73ad/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/77cb9e1c75b8e400c5b93a557ce386c9/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2957bf0fcda421c8a6303deb08b55c2b/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ad3a234787b8edaf4ea13634a95407ec/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/d279a3e2d0797f68e92c9bfc9563a695/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/dec9a9e8433e886831ef22a361b486ec/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/492c1aaf488c80948da0242314b61c4f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f773f2485e57d361a20e8b3642838de7/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5bf109f5cc317547aee9579d2daddbb3/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.browser:browser:1.4.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ad1f5882bd104f544508905877109fd7/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5f07ef2719f4d34edaaed12f90522965/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3d4c24ce12f0716887a156c4793dc619/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8e3d3c72635991273265cd11de00f915/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4d90ca6d4691092f7f5bcef49d964598/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e9611ff1f4c69c862c9d7cc91a7df5ea/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0744bae45d201df7e1bff8025cfd5baf/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/660179eb8da11e4da6703c08b47771ea/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/b743faff062db3a973e31d6121d6139a/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/20ce7e5d12965d06473c4870cfd0196f/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3675db606a1816f22fc48622f5f71b3a/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5a52bdba5be8e0efd3eb581b98d67e93/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/9a6e41bdc76a0069d9d1bd7a99dba98b/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/03746f36ef1cc3e3a6d1a446c61b07ab/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/074e0ed083188deb74f8605068f15fea/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/b5c90a3d6684b72459e7c3bab25df799/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e4eed67bcb7dbacbb9f11dcbb8a9d90c/jetified-firebase-components-17.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8fbcaf625a49b4311b251dd1bd23cb0c/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f93344c1ea3cc360a58278f6223c6d33/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e6945ada8305ce93cbe054cacf335db4/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/be1632c271929061a918c7538ac91c29/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e719294d411f74ef67fbb910149f402c/jetified-grpc-android-1.44.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5d617ebbeeeeacb1d52127ec9e4653c3/jetified-threetenabp-1.2.3/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/eebbb7a07a61546a3531c5affd82ed85/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/7e316f24e45902e0c67e2188482421bb/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+	package
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:2:5-35
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:1-47:12
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:46:5-77
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:46:22-74
+uses-sdk
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences_android] /Users/jafar/flutter projects/medi_track/build/shared_preferences_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] /Users/jafar/flutter projects/medi_track/build/shared_preferences_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] /Users/jafar/flutter projects/medi_track/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/jafar/flutter projects/medi_track/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:notification_permissions] /Users/jafar/flutter projects/medi_track/build/notification_permissions/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:notification_permissions] /Users/jafar/flutter projects/medi_track/build/notification_permissions/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:app_settings] /Users/jafar/flutter projects/medi_track/build/app_settings/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:app_settings] /Users/jafar/flutter projects/medi_track/build/app_settings/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_keyboard_visibility] /Users/jafar/flutter projects/medi_track/build/flutter_keyboard_visibility/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_keyboard_visibility] /Users/jafar/flutter projects/medi_track/build/flutter_keyboard_visibility/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/350199e59153ae6a9bd2425baa6b511f/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/350199e59153ae6a9bd2425baa6b511f/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/de394d86e30a6e30062175a1deba4fb3/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/de394d86e30a6e30062175a1deba4fb3/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b1c6f63d723152997e30b9c383900a3/jetified-firebase-appcheck-interop-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b1c6f63d723152997e30b9c383900a3/jetified-firebase-appcheck-interop-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a2b9e436cc7903490f03fe42d505c4e1/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a2b9e436cc7903490f03fe42d505c4e1/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/88f830c8a8d86a3ebc0294d0edfb971e/media-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/88f830c8a8d86a3ebc0294d0edfb971e/media-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.3.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f353ad0b87e65e71be770e51d0104514/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f353ad0b87e65e71be770e51d0104514/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0e920b6f64b3e25c4aeeccc8f909ab31/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0e920b6f64b3e25c4aeeccc8f909ab31/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ee2cd5cce0601cd6a9c4888018d5b6ae/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ee2cd5cce0601cd6a9c4888018d5b6ae/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/71ff1b600b7e434ea6d9a8add370fd02/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/71ff1b600b7e434ea6d9a8add370fd02/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/536393d67f9119702331d1862db63d81/jetified-play-services-vision-20.1.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision:20.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/536393d67f9119702331d1862db63d81/jetified-play-services-vision-20.1.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/165cc08740a2372196f4b358961b53be/jetified-play-services-vision-common-19.1.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:19.1.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/165cc08740a2372196f4b358961b53be/jetified-play-services-vision-common-19.1.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a1b8a66c32ae9a101d5653d83374dc3c/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a1b8a66c32ae9a101d5653d83374dc3c/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/46c33e9a0e79b5a94ed29e818c6e0e57/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/46c33e9a0e79b5a94ed29e818c6e0e57/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/150ac8f44cd467cf88d389f6158da1b7/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/150ac8f44cd467cf88d389f6158da1b7/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/6abedeb70fc2b0a7ac9dde02ba387585/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/6abedeb70fc2b0a7ac9dde02ba387585/jetified-play-services-clearcut-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3c3317d4c9d8a46812159184248103a6/jetified-play-services-flags-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3c3317d4c9d8a46812159184248103a6/jetified-play-services-flags-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0659900500155a7983b62b9317cebbaa/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0659900500155a7983b62b9317cebbaa/jetified-play-services-phenotype-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0fb4aa79ecbc3d536a2a436220fe36af/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0fb4aa79ecbc3d536a2a436220fe36af/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/cdca8c87c086ed3128ffd6b999f5886b/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/cdca8c87c086ed3128ffd6b999f5886b/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/c212252c7a336073c9b9e230f0222eca/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/c212252c7a336073c9b9e230f0222eca/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/031b57ff437d9b99ab9f92c6ad385103/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/031b57ff437d9b99ab9f92c6ad385103/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b933f66da461b62aca365f1bf9405e2/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4b933f66da461b62aca365f1bf9405e2/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f6eb2c0f8e5aa68d491b77c9660a73ad/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f6eb2c0f8e5aa68d491b77c9660a73ad/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/77cb9e1c75b8e400c5b93a557ce386c9/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/77cb9e1c75b8e400c5b93a557ce386c9/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2957bf0fcda421c8a6303deb08b55c2b/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2957bf0fcda421c8a6303deb08b55c2b/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ad3a234787b8edaf4ea13634a95407ec/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ad3a234787b8edaf4ea13634a95407ec/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/d279a3e2d0797f68e92c9bfc9563a695/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/d279a3e2d0797f68e92c9bfc9563a695/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/dec9a9e8433e886831ef22a361b486ec/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/dec9a9e8433e886831ef22a361b486ec/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/492c1aaf488c80948da0242314b61c4f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/492c1aaf488c80948da0242314b61c4f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f773f2485e57d361a20e8b3642838de7/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f773f2485e57d361a20e8b3642838de7/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5bf109f5cc317547aee9579d2daddbb3/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5bf109f5cc317547aee9579d2daddbb3/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ad1f5882bd104f544508905877109fd7/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/ad1f5882bd104f544508905877109fd7/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5f07ef2719f4d34edaaed12f90522965/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5f07ef2719f4d34edaaed12f90522965/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3d4c24ce12f0716887a156c4793dc619/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3d4c24ce12f0716887a156c4793dc619/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8e3d3c72635991273265cd11de00f915/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8e3d3c72635991273265cd11de00f915/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4d90ca6d4691092f7f5bcef49d964598/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4d90ca6d4691092f7f5bcef49d964598/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e9611ff1f4c69c862c9d7cc91a7df5ea/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e9611ff1f4c69c862c9d7cc91a7df5ea/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/80aa5a7ccd46ef3ad88c257ba4115b28/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0744bae45d201df7e1bff8025cfd5baf/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/0744bae45d201df7e1bff8025cfd5baf/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/660179eb8da11e4da6703c08b47771ea/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/660179eb8da11e4da6703c08b47771ea/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/b743faff062db3a973e31d6121d6139a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/b743faff062db3a973e31d6121d6139a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/20ce7e5d12965d06473c4870cfd0196f/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/20ce7e5d12965d06473c4870cfd0196f/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3675db606a1816f22fc48622f5f71b3a/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3675db606a1816f22fc48622f5f71b3a/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5a52bdba5be8e0efd3eb581b98d67e93/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5a52bdba5be8e0efd3eb581b98d67e93/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/9a6e41bdc76a0069d9d1bd7a99dba98b/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/9a6e41bdc76a0069d9d1bd7a99dba98b/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/03746f36ef1cc3e3a6d1a446c61b07ab/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/03746f36ef1cc3e3a6d1a446c61b07ab/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/074e0ed083188deb74f8605068f15fea/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/074e0ed083188deb74f8605068f15fea/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/b5c90a3d6684b72459e7c3bab25df799/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/b5c90a3d6684b72459e7c3bab25df799/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e4eed67bcb7dbacbb9f11dcbb8a9d90c/jetified-firebase-components-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:17.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e4eed67bcb7dbacbb9f11dcbb8a9d90c/jetified-firebase-components-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8fbcaf625a49b4311b251dd1bd23cb0c/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8fbcaf625a49b4311b251dd1bd23cb0c/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f93344c1ea3cc360a58278f6223c6d33/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/f93344c1ea3cc360a58278f6223c6d33/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e6945ada8305ce93cbe054cacf335db4/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e6945ada8305ce93cbe054cacf335db4/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/be1632c271929061a918c7538ac91c29/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/be1632c271929061a918c7538ac91c29/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e719294d411f74ef67fbb910149f402c/jetified-grpc-android-1.44.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e719294d411f74ef67fbb910149f402c/jetified-grpc-android-1.44.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5d617ebbeeeeacb1d52127ec9e4653c3/jetified-threetenabp-1.2.3/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/jafar/.gradle/caches/transforms-2/files-2.1/5d617ebbeeeeacb1d52127ec9e4653c3/jetified-threetenabp-1.2.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/eebbb7a07a61546a3531c5affd82ed85/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/eebbb7a07a61546a3531c5affd82ed85/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/7e316f24e45902e0c67e2188482421bb/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/7e316f24e45902e0c67e2188482421bb/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml
+activity#com.jafar.medi_track.MainActivity
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:7:9-29:20
+	android:turnScreenOn
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:9:13-40
+	android:showWhenLocked
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:8:13-42
+	android:launchMode
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:12:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:15:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:16:13-55
+	android:exported
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:11:13-36
+	android:configChanges
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:14:13-163
+	android:theme
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:13:13-47
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:10:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:21:13-24:17
+	android:resource
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:23:15-52
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:22:15-70
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:25:13-28:29
+action#android.intent.action.MAIN
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:26:17-68
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:27:17-76
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:27:27-74
+receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:30:9-34:24
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:17:9-26:20
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:17:9-26:20
+	android:exported
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:30:19-107
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:31:13-33:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:32:25-76
+receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:35:13-110
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:14:9-16:40
+MERGED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:14:9-16:40
+	android:exported
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:16:13-37
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:35:23-107
+meta-data#flutterEmbedding
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:38:9-40:33
+	android:value
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:40:13-30
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:39:13-44
+service#com.dexterous.flutterlocalnotifications.ForegroundService
+ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:41:9-44:43
+	android:exported
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:43:13-37
+	android:stopWithTask
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:44:13-41
+	android:name
+		ADDED from /Users/jafar/flutter projects/medi_track/android/app/src/main/AndroidManifest.xml:42:13-85
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+MERGED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:64:9-70:19
+MERGED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:64:9-70:19
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:33:9-37:35
+MERGED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:33:9-37:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:66:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:8:18-89
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
+ADDED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_auth] /Users/jafar/flutter projects/medi_track/build/firebase_auth/intermediates/library_manifest/release/AndroidManifest.xml:10:17-124
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
+ADDED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:cloud_firestore] /Users/jafar/flutter projects/medi_track/build/cloud_firestore/intermediates/library_manifest/release/AndroidManifest.xml:10:17-134
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
+ADDED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_core] /Users/jafar/flutter projects/medi_track/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:10:17-124
+uses-permission#android.permission.CAMERA
+ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:9:22-62
+uses-feature#android.hardware.camera
+ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:11:5-60
+	android:name
+		ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:11:19-57
+uses-permission#android.permission.FLASHLIGHT
+ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:13:5-69
+	android:name
+		ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:13:22-66
+activity#com.amolg.flutterbarcodescanner.BarcodeCaptureActivity
+ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:18:9-91
+	android:name
+		ADDED from [:flutter_barcode_scanner] /Users/jafar/flutter projects/medi_track/build/flutter_barcode_scanner/intermediates/library_manifest/release/AndroidManifest.xml:18:19-88
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.VIBRATE
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:8:5-66
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:8:22-63
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:9:22-78
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:11:5-77
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:11:22-74
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:20:13-25:29
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:22:17-84
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:22:25-81
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:23:17-82
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:23:25-79
+action#com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:24:17-82
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/jafar/flutter projects/medi_track/build/flutter_local_notifications/intermediates/library_manifest/release/AndroidManifest.xml:24:25-79
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher_android] /Users/jafar/flutter projects/medi_track/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:9:13-74
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/jafar/.gradle/caches/transforms-2/files-2.1/a14b727e1224758810f91ee8ac97baaf/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:14:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:23:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:13:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e719294d411f74ef67fbb910149f402c/jetified-grpc-android-1.44.1/AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/e719294d411f74ef67fbb910149f402c/jetified-grpc-android-1.44.1/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:24:22-76
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:27:9-44:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:29:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:31:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:32:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:28:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:33:13-43:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:39:17-42:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:41:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:40:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:42:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:45:9-62:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:47:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:49:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:48:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:50:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:46:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:51:13-61:29
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:67:13-69:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:69:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.7] /Users/jafar/.gradle/caches/transforms-2/files-2.1/4dfef613e188a3864cedc6aafcbcfa56/jetified-firebase-auth-21.0.7/AndroidManifest.xml:68:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.2.2] /Users/jafar/.gradle/caches/transforms-2/files-2.1/2a24e7af103e690564a36b569659a18d/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:21:17-111
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:26:9-31:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:30:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:29:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.1.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/3ef515f1ec7e7c12517505c880fde883/jetified-firebase-common-20.1.1/AndroidManifest.xml:27:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/jafar/.gradle/caches/transforms-2/files-2.1/693e905576af25746ab711c1eaafb7e4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/jafar/.gradle/caches/transforms-2/files-2.1/8953ca5c8c30192097b77325e3ddddda/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
