@@ -4,7 +4,7 @@
 
 # MediTrack
 
-An Open-Source Medicine Tracker app!
+Une application Open Source!
 
 [![made-with-flutter](https://img.shields.io/badge/Made%20with-Flutter-1f425f.svg)](https://flutter.dev/) 
 
@@ -22,22 +22,22 @@ An Open-Source Medicine Tracker app!
 
 
 ## Translations
-- [French :fr:](/README.FR.md)
+- [English :en:](/README.md)
 
 
 
 ## Features
 
-- Easy use
-- Barcode scanner
-- Offline mode
-- Modern UI
-- Cache support
-- No Subscription
-- No Ads
+- Utilisation facile
+- Lecteur de codes-barres
+- Mode hors-ligne
+- Interface utilisateur moderne
+- Prise en charge du cache
+- Pas d'abonnement
+- Pas de pubs
 
-and much more...
-Check it yourself :)
+et beaucoup plus...
+Vérifiez vous-même :)
 
 ## Screenshots
 
