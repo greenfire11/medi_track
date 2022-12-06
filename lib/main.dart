@@ -2,6 +2,7 @@
 
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:medi_track/screens/change_password_screen.dart';
 import 'package:medi_track/screens/homepage_screen.dart';
 import 'package:medi_track/screens/welcome_screen.dart';
@@ -20,13 +21,15 @@ import 'dart:io' show Platform;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   print(FirebaseAuth.instance.currentUser);
   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
   tz.initializeTimeZones();
-  runApp(MyApp());
+  runApp(MyApp(
+  ));
 }
 
 
@@ -77,9 +80,14 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget build(BuildContext context) {
+     SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
     return MaterialApp(
       supportedLocales: L10n.all,
       locale: _locale,
+
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -90,6 +98,7 @@ class _MyAppState extends State<MyApp> {
       home: FirebaseAuth.instance.currentUser != null
           ? MyHomePage2()
           : WelcomeScreen(),
+        
     );
   }
 }

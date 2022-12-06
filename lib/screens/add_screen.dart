@@ -472,16 +472,21 @@ class _AddScreenState extends State<AddScreen> {
                         'frequency': dropdownvalue,
                         'id': id
                       };
-                      await db.collection(userid).doc().set(data);
-
-                      for (int i = 0; i < dateListTime.length; i++) {
+                      if (image == "" || nameController.text == "") {
+                        final snackbar2 = SnackBar(
+                            content:
+                                Text(AppLocalizations.of(context)!.dataNotEnteredError));
+                        ScaffoldMessenger.of(context).showSnackBar(snackbar2);
+                      } else {
+                        await db.collection(userid).doc().set(data);
+                        for (int i = 0; i < dateListTime.length; i++) {
                         await NotificationApi.showScheduledNotification(
                           id: idVal + i,
                           title: nameController.text,
                           body: AppLocalizations.of(context)!.notificationText,
                           scheduledDate: DateTime.parse(
                             dateListTime[i]
-                                 .toString()
+                                .toString()
                                 .replaceAll(":00.000Z", ""),
                           ),
                         );
@@ -495,8 +500,12 @@ class _AddScreenState extends State<AddScreen> {
 
                         print("done ${dateListTime[i]}");
                       }
-
                       Navigator.pop(context);
+                      }
+
+                      
+
+                      
                     },
                     child: Container(
                       width: 160.0,

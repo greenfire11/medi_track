@@ -51,6 +51,7 @@
     "oldPass": "Ancien mot de passe",
     "newPass":"Nouveau mot de passe",
     "changePass": "Changer le mot de passe",
-    "welcomeMessage":"Bienvenue sur MediTrack! Cette application vous rappellera quand il est temps de prendre vos médicaments en fonction du calendrier que vous créez."
+    "welcomeMessage":"Bienvenue sur MediTrack! Cette application vous rappellera quand il est temps de prendre vos médicaments en fonction du calendrier que vous créez.",
+    "dataNotEnteredError":"Veuillez entrer les informations requises."
 
 }

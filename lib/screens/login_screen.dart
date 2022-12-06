@@ -115,6 +115,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             email: emailController.text,
                             password: passwordController.text,
                           );
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyHomePage2()),
+                        );
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             print('The password provided is too weak.');
@@ -123,10 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         } catch (e) {
                         }
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => MyHomePage2()),
-                        );
+                        
                     },
                     child: Container(
                       height: 60,

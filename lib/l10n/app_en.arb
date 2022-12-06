@@ -54,7 +54,8 @@
     "oldPass": "Old password",
     "newPass":"New password",
     "changePass": "Change Password",
-    "welcomeMessage":"Welcom to MediTrack! This app will remind you when it’s time to take your medications based on the schedule you create."
+    "welcomeMessage":"Welcome to MediTrack! This app will remind you when it’s time to take your medications based on the schedule you create.",
+    "dataNotEnteredError": "Please enter required information."
 
 
 
