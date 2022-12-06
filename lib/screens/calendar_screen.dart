@@ -157,7 +157,7 @@ void initState() {
                           ],
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
+                          padding: const EdgeInsets.fromLTRB(15, 25, 15, 0),
                           child: CalendarCarousel<Event>(
                             onDayPressed: (DateTime date, List<Event> events) {
                               setState(() {
@@ -184,7 +184,7 @@ void initState() {
                             locale: Localizations.localeOf(context).toString(),
                             isScrollable: true,
                             weekFormat: false,
-                            height: 310,
+                            height: 320,
                             selectedDateTime: date1,
                             daysHaveCircularBorder: true,
                             customGridViewPhysics:
@@ -203,7 +203,7 @@ void initState() {
                           ),
                         ),
                       ),
-                      preferredSize: Size.fromHeight(height3 / 5 * 2.2)),
+                      preferredSize: Size.fromHeight(height3 /5*2.8)),
                   body: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
